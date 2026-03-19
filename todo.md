@@ -139,3 +139,20 @@
 - [x] VerifyJVTO: download + view buttons per vault item
 - [x] TypeScript: 0 errors
 - [x] Tests: 14/14 passing
+
+## Homepage Narrative Blueprint Consolidation — 2026-03-19
+
+- [x] Update Hero: H1 "Private Volcano Tours in East Java", subheadline from blueprint §2, trust strip "Licensed operator • Private tours only • Ijen screening on applicable routes • Verifiable credentials"
+- [x] Update Hero CTAs: "Browse Private Tours" + "Verify Our Credentials"
+- [x] Add Section §3: "What JVTO Is" — direct-answer intro paragraph for AI/impatient users
+- [x] Update Section §4: "What Makes JVTO Different" — 6 differentiator cards with exact blueprint copy
+- [x] Update Section §5: "Destinations We Operate" — exact descriptions per destination from blueprint
+- [x] Add Section §6: "Choose Your Departure City" — Surabaya vs Bali self-sort cards
+- [x] Update Section §7: "Featured Private Tours" — standardized cards (title, duration, start city, difficulty, price, 1-line summary)
+- [x] Add Section §8: "Founder / Story Block" — "From Local Host to Police-Led Operator" with founder card
+- [x] Update Section §9: "Independent Review Sources" — gateway not testimonial dump (Trustpilot, TripAdvisor, Google Maps cards)
+- [x] Add Section §10: "Verify JVTO Independently" — 3 verification cards (Legal Identity, Police & Safety, Press & Recognition)
+- [x] Add Section §11: "Plan Before You Book" — 4 travel guide teaser cards
+- [x] Update Section §12: "Pre-Footer CTA Band" — "Ready to choose a route, or want to verify us first?" with 3 actions
+- [x] Update Footer: Verify links cluster, policy links cluster, external proof links, correct email (hello@javavolcano-touroperator.com)
+- [x] Update TopNav: "View All Tours" + "Verify JVTO" as header CTAs
