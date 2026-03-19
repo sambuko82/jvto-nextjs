@@ -1,110 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   JVTO Design System v3.3 — Tailwind v4 @theme block
-   All colors in OKLCH as required by Tailwind v4
-   Source: jvto-design-system.html + SSOT v4.0
-───────────────────────────────────────────────────────────────────────────── */
 @theme inline {
-  /* Fonts */
   --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --font-heading: "Public Sans", sans-serif;
 
-  /* ── JVTO Brand Palette ── */
-  /* Safety Orange #FF6B35 → oklch(0.665 0.207 35.5) */
-  --color-safety-orange: oklch(0.665 0.207 35.5);
-  /* Authority Navy #0F172A → oklch(0.148 0.028 255) */
-  --color-authority-navy: oklch(0.148 0.028 255);
-  /* Authority Charcoal #0D1B12 → oklch(0.13 0.035 155) */
-  --color-authority-charcoal: oklch(0.13 0.035 155);
-  /* Verified Lime #A3E635 → oklch(0.857 0.218 130) */
-  --color-verified-lime: oklch(0.857 0.218 130);
-  /* Verified Bright #CCFF00 → oklch(0.94 0.228 120) */
-  --color-verified-bright: oklch(0.94 0.228 120);
-  /* Audit White #F4F6F8 → oklch(0.971 0.004 250) */
-  --color-audit-white: oklch(0.971 0.004 250);
+  /* JVTO Brand Colors */
+  --color-safety-orange: oklch(0.65 0.2 35);
+  --color-authority-navy: oklch(0.15 0.03 250);
+  --color-authority-charcoal: oklch(0.13 0.04 155);
+  --color-verified-lime: oklch(0.87 0.22 130);
+  --color-verified-bright: oklch(0.95 0.23 115);
+  --color-audit-white: oklch(0.97 0.005 250);
 
-  /* ── Semantic Aliases ── */
-  --color-background: oklch(0.971 0.004 250);
-  --color-foreground: oklch(0.148 0.028 255);
-  --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.148 0.028 255);
-  --color-popover: oklch(1 0 0);
-  --color-popover-foreground: oklch(0.148 0.028 255);
-  --color-primary: oklch(0.665 0.207 35.5);
-  --color-primary-foreground: oklch(1 0 0);
-  --color-secondary: oklch(0.95 0.005 250);
-  --color-secondary-foreground: oklch(0.148 0.028 255);
-  --color-muted: oklch(0.95 0.005 250);
-  --color-muted-foreground: oklch(0.55 0.02 250);
-  --color-accent: oklch(0.95 0.005 250);
-  --color-accent-foreground: oklch(0.148 0.028 255);
-  --color-destructive: oklch(0.577 0.245 27.325);
-  --color-destructive-foreground: oklch(0.985 0 0);
-  --color-border: oklch(0.9 0.005 250);
-  --color-input: oklch(0.9 0.005 250);
-  --color-ring: oklch(0.665 0.207 35.5);
-
-  /* ── Radius Tokens ── */
-  --radius: 0.75rem;
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1.1rem;
-  --radius-xl: 1.5rem;
-  --radius-bento: 2.5rem;
-  --radius-button: 0.75rem;
-  --radius-pill: 999px;
-
-  /* ── Shadow Tokens ── */
-  --shadow-sm: 0 2px 8px oklch(0.148 0.028 255 / 0.08);
-  --shadow-md: 0 10px 30px oklch(0.148 0.028 255 / 0.12);
-  --shadow-orange: 0 0 28px oklch(0.665 0.207 35.5 / 0.35);
-
-  /* Sidebar */
-  --color-sidebar: oklch(0.985 0 0);
-  --color-sidebar-foreground: oklch(0.148 0.028 255);
-  --color-sidebar-primary: oklch(0.665 0.207 35.5);
-  --color-sidebar-primary-foreground: oklch(1 0 0);
-  --color-sidebar-accent: oklch(0.95 0.005 250);
-  --color-sidebar-accent-foreground: oklch(0.148 0.028 255);
-  --color-sidebar-border: oklch(0.9 0.005 250);
-  --color-sidebar-ring: oklch(0.665 0.207 35.5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --background: oklch(0.971 0.004 250);
-  --foreground: oklch(0.148 0.028 255);
+  --background: oklch(0.97 0.005 250);
+  --foreground: oklch(0.15 0.03 250);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.148 0.028 255);
+  --card-foreground: oklch(0.15 0.03 250);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.148 0.028 255);
-  --primary: oklch(0.665 0.207 35.5);
+  --popover-foreground: oklch(0.15 0.03 250);
+  --primary: oklch(0.65 0.2 35);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.95 0.005 250);
-  --secondary-foreground: oklch(0.148 0.028 255);
+  --secondary-foreground: oklch(0.15 0.03 250);
   --muted: oklch(0.95 0.005 250);
   --muted-foreground: oklch(0.55 0.02 250);
   --accent: oklch(0.95 0.005 250);
-  --accent-foreground: oklch(0.148 0.028 255);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
+  --accent-foreground: oklch(0.15 0.03 250);
   --border: oklch(0.9 0.005 250);
   --input: oklch(0.9 0.005 250);
-  --ring: oklch(0.665 0.207 35.5);
+  --ring: oklch(0.65 0.2 35);
   --radius: 0.75rem;
+
+  --primary: var(--color-blue-700);
+  --primary-foreground: var(--color-blue-50);
+  --sidebar-primary: var(--color-blue-600);
+  --sidebar-primary-foreground: var(--color-blue-50);
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.235 0.015 65);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.235 0.015 65);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.235 0.015 65);
+  --secondary: oklch(0.98 0.001 286.375);
+  --secondary-foreground: oklch(0.4 0.015 65);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.141 0.005 285.823);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.623 0.214 259.815);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.148 0.028 255);
-  --sidebar-accent: oklch(0.95 0.005 250);
-  --sidebar-accent-foreground: oklch(0.148 0.028 255);
-  --sidebar-border: oklch(0.9 0.005 250);
-  --sidebar-ring: oklch(0.665 0.207 35.5);
+  --sidebar-foreground: oklch(0.235 0.015 65);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.623 0.214 259.815);
 }
 
 .dark {
+  --primary: var(--color-blue-700);
+  --primary-foreground: var(--color-blue-50);
+  --sidebar-primary: var(--color-blue-500);
+  --sidebar-primary-foreground: var(--color-blue-50);
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.85 0.005 65);
   --card: oklch(0.21 0.006 285.885);
@@ -116,18 +126,23 @@
   --muted: oklch(0.274 0.006 286.033);
   --muted-foreground: oklch(0.705 0.015 286.067);
   --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.92 0.005 65);
+  --accent-foreground:  oklch(0.92 0.005 65);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.665 0.207 35.5);
+  --ring: oklch(0.488 0.243 264.376);
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
   --sidebar: oklch(0.21 0.006 285.885);
   --sidebar-foreground: oklch(0.85 0.005 65);
   --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-accent-foreground:  oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.665 0.207 35.5);
+  --sidebar-ring: oklch(0.488 0.243 264.376);
 }
 
 @layer base {
@@ -136,15 +151,9 @@
   }
   body {
     @apply bg-audit-white text-authority-navy font-sans antialiased;
-    line-height: 1.55;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.03em;
-    line-height: 0.95;
-    margin: 0 0 0.7rem;
+    @apply font-heading font-black tracking-tight uppercase;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -155,12 +164,24 @@
   select:not(:disabled),
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
-    cursor: pointer;
+    @apply cursor-pointer;
   }
 }
 
 @layer components {
-  /* ── Container ── */
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
   .container {
     width: 100%;
     margin-left: auto;
@@ -168,406 +189,65 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  @media (min-width: 640px) {
-    .container { padding-left: 1.5rem; padding-right: 1.5rem; }
-  }
-  @media (min-width: 1024px) {
-    .container { padding-left: 2rem; padding-right: 2rem; max-width: 1320px; }
-  }
-
-  /* ── Flex reset ── */
-  .flex { min-height: 0; min-width: 0; }
-
-  /* ─────────────────────────────────────────────
-     FORENSIC MODE — /verify-jvto/* + /policy/*
-     Dark authority surfaces, hash visibility
-  ───────────────────────────────────────────── */
-  .forensic-surface {
-    background: linear-gradient(140deg, #0F172A 0%, #0D1B12 100%);
-    color: #e2e8f0;
-    border: 1px solid #1f3356;
-    position: relative;
-    overflow: hidden;
-  }
-  .forensic-surface::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(244,246,248,0.14) 1px, transparent 1px);
-    background-size: 24px 24px;
-    opacity: 0.18;
-    pointer-events: none;
-  }
-  .forensic-surface > * { position: relative; z-index: 2; }
-
-  .forensic-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 1.1rem;
-    padding: 1.25rem;
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .forensic-card:hover {
-    border-color: rgba(255,107,53,0.4);
-    background: rgba(255,107,53,0.05);
-  }
-
-  /* ─────────────────────────────────────────────
-     TRAVEL MODE — /tours/* + /destinations/*
-     High-emotion, strong CTA cadence
-  ───────────────────────────────────────────── */
-  .travel-surface {
-    background: linear-gradient(140deg, #fff 0%, #f7fbff 100%);
-    color: #0f172a;
-    border: 1px solid #d9e7f8;
-  }
-  .travel-card {
-    background: #fff;
-    border: 1px solid oklch(0.9 0.005 250);
-    border-radius: 1.1rem;
-    overflow: hidden;
-    box-shadow: 0 2px 8px oklch(0.148 0.028 255 / 0.08);
-    transition: box-shadow 0.25s, transform 0.25s;
-  }
-  .travel-card:hover {
-    box-shadow: 0 10px 30px oklch(0.148 0.028 255 / 0.14);
-    transform: translateY(-2px);
-  }
-
-  /* ─────────────────────────────────────────────
-     HYBRID SUPPORT MODE — /why-jvto/* + /travel-guide/*
-     Bridges narrative trust and practical decision
-  ───────────────────────────────────────────── */
-  .support-surface {
-    background: linear-gradient(140deg, #fffaf2 0%, #fff 100%);
-    color: #0f172a;
-    border: 1px solid #fee7cc;
-  }
-
-  /* ─────────────────────────────────────────────
-     SHARED COMPONENTS
-  ───────────────────────────────────────────── */
-
-  /* Bento Card — large rounded forensic/trust modules */
   .bento-card {
-    @apply bg-white border border-slate-200 overflow-hidden;
-    border-radius: 2.5rem;
-    box-shadow: 0 2px 8px oklch(0.148 0.028 255 / 0.08);
-    transition: box-shadow 0.3s, transform 0.3s;
+    @apply bg-white border border-slate-200 rounded-[2.5rem] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
   }
-  .bento-card:hover {
-    box-shadow: 0 10px 30px oklch(0.148 0.028 255 / 0.12);
-    transform: translateY(-2px);
-  }
-
-  /* Kicker — forensic section label */
-  .kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.45rem 0.8rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 107, 53, 0.45);
-    background: rgba(255, 107, 53, 0.12);
-    color: #FF6B35;
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-  .kicker-dark {
-    border-color: rgba(255, 107, 53, 0.35);
-    background: rgba(255, 107, 53, 0.15);
-    color: #FF6B35;
-  }
-  .kicker-lime {
-    border-color: rgba(163, 230, 53, 0.45);
-    background: rgba(163, 230, 53, 0.1);
-    color: #65a30d;
-  }
-  .kicker-lime-dark {
-    border-color: rgba(204, 255, 0, 0.35);
-    background: rgba(204, 255, 0, 0.1);
-    color: #CCFF00;
-  }
-
-  /* Tech Badge — monospace metadata stamp */
   .tech-badge {
-    background: #0F172A;
-    color: #fff;
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.68rem;
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    @apply bg-authority-navy text-white font-mono text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider;
   }
-
-  /* Verified Badge — lime gradient proof state */
   .verified-badge {
-    background: linear-gradient(90deg, #CCFF00, #A3E635);
-    color: #0F172A;
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-weight: 700;
-    font-size: 0.62rem;
-    padding: 0.1rem 0.42rem;
-    border-radius: 0.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  /* Hash Badge — cryptographic fingerprint display */
-  .hash-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 0.5rem;
-    padding: 0.35rem 0.6rem;
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.65rem;
-    color: #94a3b8;
-    letter-spacing: 0.04em;
+    @apply bg-gradient-to-r from-verified-bright to-verified-lime text-authority-navy font-mono font-bold text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider shadow-sm;
   }
   .hash-string {
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.65rem;
-    color: #64748b;
-    background: #f8fafc;
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.35rem;
-    border: 1px solid #e2e8f0;
-    letter-spacing: 0.04em;
+    @apply font-mono text-[11px] text-slate-500 truncate bg-slate-50 px-2 py-1 rounded border border-slate-100;
   }
-
-  /* Evidence Badge */
-  .evidence-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.3rem 0.55rem;
-    border-radius: 0.55rem;
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.62rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 600;
-  }
-  .evidence-badge-verified {
-    background: rgba(163, 230, 53, 0.15);
-    border: 1px solid rgba(163, 230, 53, 0.4);
-    color: #65a30d;
-  }
-  .evidence-badge-public {
-    background: rgba(255, 107, 53, 0.12);
-    border: 1px solid rgba(255, 107, 53, 0.35);
-    color: #FF6B35;
-  }
-  .evidence-badge-doc {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #94a3b8;
-  }
-
-  /* Status Live — pulsing operational indicator */
   .status-live {
-    position: relative;
-    display: flex;
-    height: 0.5rem;
-    width: 0.5rem;
+    @apply relative flex h-2 w-2;
   }
   .status-live::after {
     content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 9999px;
-    background: #FF6B35;
-    opacity: 0.75;
-    animation: ping 1s cubic-bezier(0,0,0.2,1) infinite;
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-safety-orange opacity-75;
   }
   .status-live::before {
     content: '';
-    position: relative;
-    display: inline-flex;
-    border-radius: 9999px;
-    height: 0.5rem;
-    width: 0.5rem;
-    background: #FF6B35;
-    z-index: 1;
+    @apply relative inline-flex rounded-full h-2 w-2 bg-safety-orange;
   }
-
-  /* Scanline — evidence inspection accent */
   .scanline {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: rgba(255, 107, 53, 0.3);
-    z-index: 10;
-    pointer-events: none;
+    @apply absolute w-full h-[2px] bg-safety-orange/30 z-10 pointer-events-none;
     animation: scan 3s linear infinite;
   }
-
-  /* Grid Pattern — forensic dot texture */
   .grid-pattern {
-    background-image: radial-gradient(circle, rgba(15,23,42,0.15) 1px, transparent 1px);
+    background-image: radial-gradient(circle, #0F172A 1px, transparent 1px);
     background-size: 24px 24px;
+    opacity: 0.03;
   }
-  .grid-pattern-light {
-    background-image: radial-gradient(circle, rgba(244,246,248,0.14) 1px, transparent 1px);
-    background-size: 24px 24px;
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
   }
-
-  /* Marquee / StatusTicker */
-  .animate-marquee { animation: marquee 30s linear infinite; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .animate-marquee { animation: marquee 30s linear infinite; }
 
-  /* Text glow — orange accent for hero */
-  .text-glow { text-shadow: 0 0 20px rgba(255, 107, 53, 0.5); }
-  .text-glow-lime { text-shadow: 0 0 16px rgba(163, 230, 53, 0.6); }
-
-  /* Orange glow shadow for CTAs */
-  .shadow-orange { box-shadow: 0 0 28px rgba(255, 107, 53, 0.35); }
-  .shadow-orange-lg { box-shadow: 0 0 40px rgba(255, 107, 53, 0.5); }
-
-  /* Policy Meta Stamp */
-  .policy-stamp {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.75rem;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 0.5rem;
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.65rem;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+  .flex {
+    min-height: 0;
+    min-width: 0;
   }
 
-  /* Chip — forensic context tags */
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    padding: 0.3rem 0.55rem;
-    border-radius: 0.55rem;
-    border: 1px solid rgba(255,255,255,0.18);
-    background: rgba(255,255,255,0.08);
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.62rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #cbd5e1;
-  }
-  .chip-light {
-    border-color: rgba(15,23,42,0.15);
-    background: rgba(15,23,42,0.05);
-    color: #475569;
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
   }
 
-  /* Mono text utility */
-  .mono {
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-  }
-
-  /* Forensic terminal block */
-  .terminal-block {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 0.75rem;
-    padding: 1rem 1.25rem;
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-    font-size: 0.75rem;
-    color: #94a3b8;
-    line-height: 1.7;
-  }
-  .terminal-line-ok { color: #A3E635; }
-  .terminal-line-warn { color: #FF6B35; }
-  .terminal-line-info { color: #7dd3fc; }
-  .terminal-prompt { color: #475569; }
-
-  /* CTA Buttons */
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #FF6B35;
-    color: #fff;
-    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
-    font-weight: 800;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
-    text-decoration: none;
-  }
-  .btn-primary:hover {
-    background: oklch(0.6 0.207 35.5);
-    box-shadow: 0 0 28px rgba(255, 107, 53, 0.4);
-    transform: translateY(-1px);
-  }
-  .btn-outline-dark {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    color: #fff;
-    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba(255,255,255,0.25);
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    text-decoration: none;
-  }
-  .btn-outline-dark:hover {
-    border-color: rgba(255,107,53,0.5);
-    background: rgba(255,107,53,0.08);
-  }
-  .btn-outline-light {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    color: #0F172A;
-    font-family: "Public Sans", ui-sans-serif, system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    border: 1px solid rgba(15,23,42,0.2);
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    text-decoration: none;
-  }
-  .btn-outline-light:hover {
-    border-color: #FF6B35;
-    color: #FF6B35;
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
   }
 }
-
-/* ─────────────────────────────────────────────
-   KEYFRAMES
-───────────────────────────────────────────── */
 @keyframes scan {
   0% { top: 0%; }
   100% { top: 100%; }
@@ -576,16 +256,3 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-@keyframes ping {
-  75%, 100% { transform: scale(2); opacity: 0; }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; }
-.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }

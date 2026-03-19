@@ -73,39 +73,39 @@ const GUIDE_SECTIONS = [
 export default function TravelGuide() {
   return (
     <GlobalLayout>
-      {/* Header — Forensic dark */}
-      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #0F172A 0%, #0A1628 100%)' }}>
+      {/* Header */}
+      <section className="bg-authority-navy py-24 relative overflow-hidden">
         <div className="scanline" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="kicker kicker-dark mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
             <BookOpen className="w-3 h-3" /> Expedition Intelligence
           </div>
-          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-8" style={{ letterSpacing: '-0.03em', lineHeight: '0.85' }}>
-            Travel<br /><span className="text-safety-orange text-glow">Guide</span>
+          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-8 leading-[0.85]">
+            Travel<br /><span className="text-safety-orange">Guide</span>
           </h1>
-          <p className="text-white/45 text-xl max-w-2xl font-light">
+          <p className="text-slate-400 text-xl max-w-2xl font-light">
             Everything you need to know before, during, and after your expedition. No surprises — only intelligence.
           </p>
         </div>
       </section>
 
-      {/* Safety Alert — warning band */}
-      <section className="py-5" style={{ background: 'rgba(239,68,68,0.06)', borderBottom: '1px solid rgba(239,68,68,0.15)' }}>
+      {/* Safety Alert */}
+      <section className="py-6 bg-red-50 border-b border-red-100">
         <div className="max-w-7xl mx-auto px-6 flex items-center gap-4">
-          <AlertTriangle className="w-5 h-5 flex-shrink-0" style={{ color: '#EF4444' }} />
-          <p className="text-sm font-medium" style={{ color: '#B91C1C' }}>
+          <AlertTriangle className="w-5 h-5 text-red-500 flex-shrink-0" />
+          <p className="text-red-700 text-sm font-medium">
             <strong>Important:</strong> Read the Health Screening requirements before booking. Certain medical conditions prevent participation in the Ijen expedition.
           </p>
           <Link href="/travel-guide/ijen-health-screening">
-            <button className="ml-auto flex-shrink-0 font-mono text-[11px] uppercase tracking-[0.12em] flex items-center gap-1 transition-colors" style={{ color: '#EF4444' }}>
+            <button className="ml-auto flex-shrink-0 text-red-500 font-mono text-[11px] uppercase tracking-widest hover:text-red-700 transition-colors flex items-center gap-1">
               Read Now <ChevronRight className="w-3 h-3" />
             </button>
           </Link>
         </div>
       </section>
 
-      {/* Guide Sections — light audit surface */}
-      <section className="py-16 md:py-24" style={{ background: '#F4F6F8' }}>
+      {/* Guide Sections */}
+      <section className="py-16 md:py-24 bg-audit-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {GUIDE_SECTIONS.map((section, idx) => {
@@ -119,23 +119,20 @@ export default function TravelGuide() {
                   transition={{ delay: idx * 0.05 }}
                 >
                   <Link href={section.link}>
-                    <div className="p-8 group cursor-pointer h-full flex flex-col rounded-2xl" style={{ background: '#fff', border: '1px solid rgba(15,23,42,0.08)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)', transition: 'box-shadow 0.2s, transform 0.2s' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(15,23,42,0.12)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 12px rgba(15,23,42,0.06)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
-                    >
+                    <div className="bento-card p-8 group cursor-pointer h-full flex flex-col">
                       <div className="flex items-start justify-between mb-6">
-                        <div className="p-3 rounded-2xl transition-colors" style={{ background: 'rgba(255,107,53,0.08)' }}>
-                          <Icon className="w-6 h-6" style={{ color: '#FF6B35' }} />
+                        <div className="p-3 bg-slate-50 rounded-2xl group-hover:bg-safety-orange/10 transition-colors">
+                          <Icon className="w-6 h-6 text-safety-orange" />
                         </div>
                         <span className={`font-mono text-[10px] px-2 py-1 rounded-full border uppercase tracking-widest font-bold ${section.badgeColor}`}>
                           {section.badge}
                         </span>
                       </div>
-                      <h3 className="text-xl font-black uppercase tracking-tight mb-3" style={{ color: '#0F172A', letterSpacing: '-0.01em' }}>{section.title}</h3>
-                      <p className="text-sm font-light leading-relaxed flex-1" style={{ color: 'rgba(15,23,42,0.5)' }}>{section.desc}</p>
-                      <div className="flex items-center gap-2 mt-6 pt-4" style={{ borderTop: '1px solid rgba(15,23,42,0.08)' }}>
-                        <span className="font-mono text-[11px] uppercase tracking-[0.12em]" style={{ color: '#FF6B35' }}>Read Guide</span>
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" style={{ color: '#FF6B35' }} />
+                      <h3 className="text-xl font-black uppercase tracking-tight text-authority-navy mb-3">{section.title}</h3>
+                      <p className="text-slate-500 text-sm font-light leading-relaxed flex-1">{section.desc}</p>
+                      <div className="flex items-center gap-2 mt-6 pt-4 border-t border-slate-100">
+                        <span className="font-mono text-[11px] text-safety-orange uppercase tracking-widest">Read Guide</span>
+                        <ChevronRight className="w-4 h-4 text-safety-orange group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </Link>
