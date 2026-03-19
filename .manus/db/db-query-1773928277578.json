@@ -1,0 +1,115 @@
+{
+  "query": "SHOW TABLES; DESCRIBE press; DESCRIBE reviews;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2G9ctzHa7CmmnQg.87c036b4218d --database coxTkGwL925usDqc3yJ9v3 --execute SHOW TABLES; DESCRIBE press; DESCRIBE reviews;",
+  "rows": [
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "crew"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "crew_reviews"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "destinations"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "faq"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "pages_meta"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "partners"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "press"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "proof_vault"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "reviews"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "tours"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "users"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "Field\tType\tNull\tKey\tDefault\tExtra"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "id\tint\tNO\tPRI\tNULL\tauto_increment"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "publisher\tvarchar(200)\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "date\tvarchar(50)\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "title\ttext\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "translatedTitle\ttext\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "url\ttext\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "quote\ttext\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "author\tvarchar(200)\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "screenshot\ttext\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "sortOrder\tint\tYES\t\t0\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "createdAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "Field\tType\tNull\tKey\tDefault\tExtra"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "id\tint\tNO\tPRI\tNULL\tauto_increment"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "author\tvarchar(200)\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "text\ttext\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "platform\tvarchar(100)\tNO\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "rating\tint\tYES\t\t5\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "date\tvarchar(50)\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "guideNames\ttext\tYES\t\tNULL\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "isFeature\ttinyint(1)\tYES\t\t0\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "sortOrder\tint\tYES\t\t0\t"
+    },
+    {
+      "Tables_in_coxTkGwL925usDqc3yJ9v3": "createdAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_coxTkGwL925usDqc3yJ9v3\n__drizzle_migrations\ncrew\ncrew_reviews\ndestinations\nfaq\npages_meta\npartners\npress\nproof_vault\nreviews\ntours\nusers\nField\tType\tNull\tKey\tDefault\tExtra\nid\tint\tNO\tPRI\tNULL\tauto_increment\npublisher\tvarchar(200)\tNO\t\tNULL\t\ndate\tvarchar(50)\tYES\t\tNULL\t\ntitle\ttext\tNO\t\tNULL\t\ntranslatedTitle\ttext\tYES\t\tNULL\t\nurl\ttext\tYES\t\tNULL\t\nquote\ttext\tYES\t\tNULL\t\nauthor\tvarchar(200)\tYES\t\tNULL\t\nscreenshot\ttext\tYES\t\tNULL\t\nsortOrder\tint\tYES\t\t0\t\ncreatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\nField\tType\tNull\tKey\tDefault\tExtra\nid\tint\tNO\tPRI\tNULL\tauto_increment\nauthor\tvarchar(200)\tNO\t\tNULL\t\ntext\ttext\tNO\t\tNULL\t\nplatform\tvarchar(100)\tNO\t\tNULL\t\nrating\tint\tYES\t\t5\t\ndate\tvarchar(50)\tYES\t\tNULL\t\nguideNames\ttext\tYES\t\tNULL\t\nisFeature\ttinyint(1)\tYES\t\t0\t\nsortOrder\tint\tYES\t\t0\t\ncreatedAt\ttimestamp\tNO\t\tCURRENT_TIMESTAMP\t\n",
+  "stderr": "",
+  "execution_time_ms": 2139
+}

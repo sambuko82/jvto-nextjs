@@ -1,9 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,700;0,800;0,900;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-heading: "Public Sans", sans-serif;
+
+  /* JVTO Brand Colors */
+  --color-safety-orange: oklch(0.65 0.2 35);
+  --color-authority-navy: oklch(0.15 0.03 250);
+  --color-authority-charcoal: oklch(0.13 0.04 155);
+  --color-verified-lime: oklch(0.87 0.22 130);
+  --color-verified-bright: oklch(0.95 0.23 115);
+  --color-audit-white: oklch(0.97 0.005 250);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -43,6 +56,25 @@
 }
 
 :root {
+  --background: oklch(0.97 0.005 250);
+  --foreground: oklch(0.15 0.03 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.03 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.03 250);
+  --primary: oklch(0.65 0.2 35);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.005 250);
+  --secondary-foreground: oklch(0.15 0.03 250);
+  --muted: oklch(0.95 0.005 250);
+  --muted-foreground: oklch(0.55 0.02 250);
+  --accent: oklch(0.95 0.005 250);
+  --accent-foreground: oklch(0.15 0.03 250);
+  --border: oklch(0.9 0.005 250);
+  --input: oklch(0.9 0.005 250);
+  --ring: oklch(0.65 0.2 35);
+  --radius: 0.75rem;
+
   --primary: var(--color-blue-700);
   --primary-foreground: var(--color-blue-50);
   --sidebar-primary: var(--color-blue-600);
@@ -118,7 +150,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-audit-white text-authority-navy font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-black tracking-tight uppercase;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -151,9 +186,47 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
+  .bento-card {
+    @apply bg-white border border-slate-200 rounded-[2.5rem] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
+  }
+  .tech-badge {
+    @apply bg-authority-navy text-white font-mono text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider;
+  }
+  .verified-badge {
+    @apply bg-gradient-to-r from-verified-bright to-verified-lime text-authority-navy font-mono font-bold text-[11px] px-2 py-1 rounded-[0.5rem] uppercase tracking-wider shadow-sm;
+  }
+  .hash-string {
+    @apply font-mono text-[11px] text-slate-500 truncate bg-slate-50 px-2 py-1 rounded border border-slate-100;
+  }
+  .status-live {
+    @apply relative flex h-2 w-2;
+  }
+  .status-live::after {
+    content: '';
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-safety-orange opacity-75;
+  }
+  .status-live::before {
+    content: '';
+    @apply relative inline-flex rounded-full h-2 w-2 bg-safety-orange;
+  }
+  .scanline {
+    @apply absolute w-full h-[2px] bg-safety-orange/30 z-10 pointer-events-none;
+    animation: scan 3s linear infinite;
+  }
+  .grid-pattern {
+    background-image: radial-gradient(circle, #0F172A 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.03;
+  }
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .animate-marquee { animation: marquee 30s linear infinite; }
 
   .flex {
     min-height: 0;
@@ -174,4 +247,12 @@
       max-width: 1280px; /* Standard content width */
     }
   }
+}
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
