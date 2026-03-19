@@ -32,55 +32,53 @@ export default function Destinations() {
 
   return (
     <GlobalLayout>
-      {/* Header */}
-      <section className="bg-authority-navy py-20 relative overflow-hidden">
+      {/* Header — Forensic dark */}
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #0F172A 0%, #0A1628 100%)' }}>
         <div className="scanline" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+          <div className="kicker kicker-dark mb-6">
             <MapPin className="w-3 h-3" /> Expedition Registry v1.9
           </div>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-6">
-            Destination<br /><span className="text-safety-orange">Registry</span>
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-6" style={{ letterSpacing: '-0.03em', lineHeight: '0.9' }}>
+            Destination<br /><span className="text-safety-orange text-glow">Registry</span>
           </h1>
-          <p className="text-slate-400 text-xl max-w-2xl font-light">
+          <p className="text-white/45 text-xl max-w-2xl font-light">
             Every route, altitude, and safety note is verified and publicly documented. No surprises — only evidence.
           </p>
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="py-8 bg-white border-b border-slate-100 sticky top-[60px] z-50">
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-4 items-center">
+      {/* Filters — sticky forensic bar */}
+      <section className="py-3 sticky top-[56px] z-50" style={{ background: 'rgba(15,23,42,0.97)', backdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-3 items-center">
           <div className="flex items-center gap-2">
-            <Filter className="w-4 h-4 text-slate-400" />
-            <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Filter:</span>
+            <Filter className="w-3 h-3 text-white/30" />
+            <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.15em]">Type:</span>
           </div>
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-widest transition-all ${
-                  activeCategory === cat
-                    ? 'bg-safety-orange text-white'
-                    : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                }`}
+                className="font-mono text-[10px] uppercase tracking-[0.12em] px-3 py-1.5 rounded-lg transition-all"
+                style={activeCategory === cat
+                  ? { background: 'rgba(255,107,53,0.15)', border: '1px solid rgba(255,107,53,0.4)', color: '#FF6B35' }
+                  : { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.4)' }}
               >
                 {cat}
               </button>
             ))}
           </div>
-          <div className="h-4 w-px bg-slate-200 hidden sm:block" />
+          <div className="h-4 w-px bg-white/10 hidden sm:block" />
           <div className="flex flex-wrap gap-2">
             {DIFFICULTIES.map(diff => (
               <button
                 key={diff}
                 onClick={() => setActiveDifficulty(diff)}
-                className={`px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-widest transition-all ${
-                  activeDifficulty === diff
-                    ? 'bg-authority-navy text-white'
-                    : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                }`}
+                className="font-mono text-[10px] uppercase tracking-[0.12em] px-3 py-1.5 rounded-lg transition-all"
+                style={activeDifficulty === diff
+                  ? { background: 'rgba(163,230,53,0.12)', border: '1px solid rgba(163,230,53,0.35)', color: '#A3E635' }
+                  : { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.4)' }}
               >
                 {diff}
               </button>
@@ -89,8 +87,8 @@ export default function Destinations() {
         </div>
       </section>
 
-      {/* Grid */}
-      <section className="py-16 md:py-24 bg-audit-white">
+      {/* Grid — light surface for card contrast */}
+      <section className="py-16 md:py-24" style={{ background: '#F4F6F8' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((dest: any, idx: number) => (
@@ -101,7 +99,10 @@ export default function Destinations() {
                 transition={{ delay: idx * 0.05 }}
               >
                 <Link href={`/destinations/${dest.slug}`}>
-                  <div className="bento-card group cursor-pointer h-full flex flex-col">
+                  <div className="group cursor-pointer h-full flex flex-col rounded-2xl overflow-hidden" style={{ background: '#fff', border: '1px solid rgba(15,23,42,0.08)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)', transition: 'box-shadow 0.2s, transform 0.2s' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(15,23,42,0.14)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 12px rgba(15,23,42,0.06)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
+                  >
                     <div className="relative h-56 overflow-hidden flex-shrink-0">
                       <img
                         src={dest.image}
@@ -109,7 +110,7 @@ export default function Destinations() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 to-transparent" />
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%)' }} />
                       <div className="absolute top-4 left-4 flex gap-2">
                         <span className="tech-badge">{dest.category}</span>
                         <span className={`font-mono text-[10px] px-2 py-1 rounded-[0.5rem] uppercase font-black ${

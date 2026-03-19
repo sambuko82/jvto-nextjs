@@ -30,17 +30,17 @@ export default function Tours() {
 
   return (
     <GlobalLayout>
-      {/* Header */}
-      <section className="bg-authority-navy py-20 relative overflow-hidden">
+      {/* Header — Forensic surface */}
+      <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #0F172A 0%, #0A1628 100%)' }}>
         <div className="scanline" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+          <div className="kicker kicker-dark mb-6">
             <ShieldCheck className="w-3 h-3" /> 16 Verified Tour Packages
           </div>
-          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-6">
-            Tour<br /><span className="text-safety-orange">Packages</span>
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-6" style={{ letterSpacing: '-0.03em', lineHeight: '0.9' }}>
+            Tour<br /><span className="text-safety-orange text-glow">Packages</span>
           </h1>
-          <p className="text-slate-400 text-xl max-w-2xl font-light">
+          <p className="text-white/45 text-xl max-w-2xl font-light">
             Private expeditions with Tourist Police-led safety, transparent IDR pricing, and zero hidden costs. From Surabaya or Bali.
           </p>
           <div className="flex gap-6 mt-8">
@@ -50,57 +50,55 @@ export default function Tours() {
               { label: 'IDR Pricing', sub: 'No hidden costs' },
             ].map((s) => (
               <div key={s.label}>
-                <div className="font-black text-white text-xl">{s.label}</div>
-                <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">{s.sub}</div>
+                <div className="font-black text-white text-xl" style={{ textShadow: '0 0 20px rgba(255,107,53,0.3)' }}>{s.label}</div>
+                <div className="font-mono text-[10px] text-white/35 uppercase tracking-[0.15em]">{s.sub}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="py-4 bg-white border-b border-slate-100 sticky top-[60px] z-50 shadow-sm">
+      {/* Filters — sticky forensic bar */}
+      <section className="py-3 sticky top-[56px] z-50" style={{ background: 'rgba(15,23,42,0.97)', backdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
-            <Filter className="w-3 h-3 text-slate-400" />
-            <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Departure:</span>
+            <Filter className="w-3 h-3 text-white/30" />
+            <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.15em]">Departure:</span>
           </div>
           {(['all', 'Surabaya', 'Bali'] as const).map(dep => (
             <button
               key={dep}
               onClick={() => setActiveDeparture(dep)}
-              className={`px-4 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-widest transition-all ${
-                activeDeparture === dep
-                  ? 'bg-authority-navy text-white'
-                  : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-              }`}
+              className="font-mono text-[10px] uppercase tracking-[0.12em] px-3 py-1.5 rounded-lg transition-all"
+              style={activeDeparture === dep
+                ? { background: 'rgba(255,107,53,0.15)', border: '1px solid rgba(255,107,53,0.4)', color: '#FF6B35' }
+                : { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.4)' }}
             >
               {dep === 'all' ? 'All' : `From ${dep}`}
             </button>
           ))}
-          <div className="w-px h-5 bg-slate-200 mx-1" />
-          <span className="font-mono text-[11px] text-slate-500 uppercase tracking-widest">Duration:</span>
+          <div className="w-px h-4 bg-white/10 mx-1" />
+          <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.15em]">Duration:</span>
           {(['all', '1', '2', '3', '4', '5+'] as const).map(d => (
             <button
               key={d}
               onClick={() => setActiveDays(d)}
-              className={`px-3 py-1.5 rounded-full font-mono text-[11px] uppercase tracking-widest transition-all ${
-                activeDays === d
-                  ? 'bg-safety-orange text-white'
-                  : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-              }`}
+              className="font-mono text-[10px] uppercase tracking-[0.12em] px-3 py-1.5 rounded-lg transition-all"
+              style={activeDays === d
+                ? { background: 'rgba(255,107,53,0.15)', border: '1px solid rgba(255,107,53,0.4)', color: '#FF6B35' }
+                : { background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.4)' }}
             >
               {d === 'all' ? 'All' : d === '5+' ? '5+ Days' : `${d}D`}
             </button>
           ))}
-          <span className="ml-auto font-mono text-[11px] text-slate-400 uppercase">
+          <span className="ml-auto font-mono text-[10px] text-white/30 uppercase tracking-[0.12em]">
             {displayTours.length} package{displayTours.length !== 1 ? 's' : ''}
           </span>
         </div>
       </section>
 
-      {/* Tours Grid */}
-      <section className="py-16 md:py-24 bg-audit-white">
+      {/* Tours Grid — light surface for card contrast */}
+      <section className="py-16 md:py-24" style={{ background: '#F4F6F8' }}>
         <div className="max-w-7xl mx-auto px-6">
           {isLoading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -139,7 +137,10 @@ export default function Tours() {
                     transition={{ delay: idx * 0.04 }}
                   >
                     <Link href={`/tours/${tour.slug}`}>
-                      <div className="bento-card group cursor-pointer h-full flex flex-col">
+                      <div className="group cursor-pointer h-full flex flex-col rounded-2xl overflow-hidden" style={{ background: '#fff', border: '1px solid rgba(15,23,42,0.08)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)', transition: 'box-shadow 0.2s, transform 0.2s' }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(15,23,42,0.12)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 12px rgba(15,23,42,0.06)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
+                      >
                         {/* Image */}
                         <div className="relative h-48 overflow-hidden flex-shrink-0 bg-slate-800 rounded-t-[1rem]">
                           {tour.image ? (
@@ -154,7 +155,7 @@ export default function Tours() {
                               <MapPin className="w-12 h-12 text-slate-600" />
                             </div>
                           )}
-                          <div className="absolute inset-0 bg-gradient-to-t from-authority-navy/80 to-transparent" />
+                          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 60%)' }} />
                           <div className="absolute top-3 left-3 flex gap-2">
                             <span className="tech-badge capitalize">From {depFrom}</span>
                             <span className={`font-mono text-[10px] px-2 py-1 rounded-[0.5rem] uppercase font-black ${getDifficultyColor(physicality)}`}>
@@ -173,13 +174,13 @@ export default function Tours() {
 
                         {/* Content */}
                         <div className="p-6 flex-1 flex flex-col">
-                          <h3 className="text-base font-black uppercase tracking-tight text-authority-navy mb-2 leading-tight">
+                          <h3 className="text-base font-black uppercase tracking-tight mb-2 leading-tight" style={{ color: '#0F172A', letterSpacing: '-0.01em' }}>
                             {tour.name}
                           </h3>
-                          <p className="text-slate-500 text-sm font-light mb-4 flex-1 line-clamp-2">
+                          <p className="text-sm font-light mb-4 flex-1 line-clamp-2" style={{ color: 'rgba(15,23,42,0.5)' }}>
                             {tour.description}
                           </p>
-                          <div className="flex items-center gap-4 mb-4 text-slate-400">
+                          <div className="flex items-center gap-4 mb-4" style={{ color: 'rgba(15,23,42,0.4)' }}>
                             <div className="flex items-center gap-1">
                               <Clock className="w-3 h-3" />
                               <span className="font-mono text-[10px] uppercase">{tour.duration}</span>
@@ -195,11 +196,11 @@ export default function Tours() {
                               <span className="text-slate-500 text-xs font-light">{h}</span>
                             </div>
                           ))}
-                          <div className="flex items-center justify-between pt-4 mt-4 border-t border-slate-100">
+                          <div className="flex items-center justify-between pt-4 mt-4" style={{ borderTop: '1px solid rgba(15,23,42,0.08)' }}>
                             <div>
-                              <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">From</div>
-                              <div className="font-black text-authority-navy text-lg">{formatPrice(tour.pricePerPerson)}</div>
-                              <div className="font-mono text-[10px] text-slate-400 uppercase">/person</div>
+                              <div className="font-mono text-[10px] uppercase tracking-[0.12em]" style={{ color: 'rgba(15,23,42,0.4)' }}>From</div>
+                              <div className="font-black text-lg" style={{ color: '#0F172A' }}>{formatPrice(tour.pricePerPerson)}</div>
+                              <div className="font-mono text-[10px] uppercase" style={{ color: 'rgba(15,23,42,0.4)' }}>/person</div>
                             </div>
                             <div className="flex items-center gap-2">
                               <span className="font-mono text-[10px] text-safety-orange uppercase">View Tour</span>
@@ -218,8 +219,8 @@ export default function Tours() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-authority-navy relative overflow-hidden">
+      {/* CTA — forensic dark */}
+      <section className="py-16 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #0F172A 0%, #0A1628 100%)' }}>
         <div className="scanline" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="font-mono text-[11px] text-safety-orange uppercase tracking-[0.2em] mb-4">

@@ -156,3 +156,22 @@
 - [x] Update Section §12: "Pre-Footer CTA Band" — "Ready to choose a route, or want to verify us first?" with 3 actions
 - [x] Update Footer: Verify links cluster, policy links cluster, external proof links, correct email (hello@javavolcano-touroperator.com)
 - [x] Update TopNav: "View All Tours" + "Verify JVTO" as header CTAs
+
+## Design System v3.3 Implementation (2026-03-20)
+
+- [x] Apply design tokens: Public Sans + JetBrains Mono fonts via Google Fonts CDN
+- [x] Apply color tokens: Safety Orange #FF6B35, Authority Navy #0F172A, Verified Lime #A3E635, Audit White #F4F6F8
+- [x] Apply shape tokens: radius-bento 2.5rem, radius-card 1.1rem, radius-button 0.75rem
+- [x] Apply shadow tokens: shadow-sm, shadow-md, shadow-orange
+- [x] Apply animation tokens: scanline 3s, animate-marquee 30s, status-live pulse
+- [x] Rebuild index.css: full Tailwind v4 @theme block with OKLCH color values
+- [x] Update index.html: Google Fonts CDN (Public Sans 400/700/900, JetBrains Mono 400/700)
+- [x] Rebuild TopNav: mode-aware styling, progress indicator, forensic/travel/support variants, backdrop blur
+- [x] Rebuild Footer: forensic surface, grid nav, contact card, trust badges
+- [x] Rebuild BookingRail: orange glow shadow, encrypted-channel styling, correct WhatsApp
+- [x] Apply Forensic Mode to Tours.tsx: dark header gradient, forensic filter bar (orange/lime active states), clean card grid
+- [x] Apply Forensic Mode to Destinations.tsx: dark header, forensic filter bar, hover lift cards
+- [x] Apply Hybrid Support Mode to WhyJVTO.tsx: dark header → light problem → dark solution → light press → dark CTA
+- [x] Apply Hybrid Support Mode to TravelGuide.tsx: dark header, warning band, clean guide cards
+- [x] TypeScript: 0 errors
+- [x] Tests: 14/14 passing

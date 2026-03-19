@@ -34,30 +34,30 @@ export default function WhyJVTO() {
 
   return (
     <GlobalLayout>
-      {/* Header */}
-      <section className="bg-authority-navy py-24 relative overflow-hidden">
+      {/* Header — Forensic dark */}
+      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #0F172A 0%, #0A1628 100%)' }}>
         <div className="scanline" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+          <div className="kicker kicker-dark mb-6">
             <ShieldCheck className="w-3 h-3" /> Proof-Based Tourism
           </div>
-          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-8 leading-[0.85]">
-            Why<br /><span className="text-safety-orange">JVTO?</span>
+          <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-white mb-8" style={{ letterSpacing: '-0.03em', lineHeight: '0.85' }}>
+            Why<br /><span className="text-safety-orange text-glow">JVTO?</span>
           </h1>
-          <p className="text-slate-400 text-xl max-w-2xl font-light">
+          <p className="text-white/45 text-xl max-w-2xl font-light">
             In an industry built on unverifiable claims, we built the first fully auditable tour operator infrastructure in Indonesia.
           </p>
         </div>
       </section>
 
-      {/* The Problem */}
-      <section className="py-24 bg-slate-50">
+      {/* The Problem — light audit surface */}
+      <section className="py-24" style={{ background: '#F4F6F8' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+            <div className="kicker mb-6">
               <AlertTriangle className="w-3 h-3" /> The Industry Problem
             </div>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-authority-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6" style={{ color: '#0F172A', letterSpacing: '-0.02em' }}>
               What Most Operators<br />Don't Tell You
             </h2>
           </div>
@@ -69,25 +69,26 @@ export default function WhyJVTO() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bento-card p-6 border-red-200"
+                className="p-6 rounded-2xl"
+                style={{ background: '#fff', border: '1px solid rgba(239,68,68,0.15)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)' }}
               >
-                <AlertTriangle className="w-6 h-6 text-red-400 mb-4" />
-                <h3 className="font-black uppercase text-authority-navy mb-3">{problem.title}</h3>
-                <p className="text-slate-500 text-sm font-light leading-relaxed">{problem.desc}</p>
+                <AlertTriangle className="w-6 h-6 mb-4" style={{ color: '#EF4444' }} />
+                <h3 className="font-black uppercase mb-3" style={{ color: '#0F172A' }}>{problem.title}</h3>
+                <p className="text-sm font-light leading-relaxed" style={{ color: 'rgba(15,23,42,0.5)' }}>{problem.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The JVTO Solution */}
-      <section className="py-24 bg-audit-white">
+      {/* The JVTO Solution — forensic dark */}
+      <section className="py-24" style={{ background: '#0F172A' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-verified-bright/10 border border-verified-bright/20 text-authority-navy text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+            <div className="kicker kicker-dark mb-6">
               <CheckCircle2 className="w-3 h-3" /> The JVTO Solution
             </div>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-authority-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-6" style={{ letterSpacing: '-0.02em' }}>
               Proof Over Promises
             </h2>
           </div>
@@ -99,15 +100,16 @@ export default function WhyJVTO() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bento-card p-8"
+                className="p-8 rounded-2xl"
+                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(163,230,53,0.2)', boxShadow: '0 2px 16px rgba(0,0,0,0.2)' }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-verified-bright/10 rounded-2xl flex-shrink-0">
-                    <CheckCircle2 className="w-6 h-6 text-verified-bright" />
+                  <div className="p-3 rounded-2xl flex-shrink-0" style={{ background: 'rgba(163,230,53,0.1)' }}>
+                    <CheckCircle2 className="w-6 h-6" style={{ color: '#A3E635' }} />
                   </div>
                   <div>
-                    <h3 className="font-black uppercase text-authority-navy text-xl mb-2">{solution.title}</h3>
-                    <p className="text-slate-500 font-light mb-4">{solution.desc}</p>
+                    <h3 className="font-black uppercase text-white text-xl mb-2">{solution.title}</h3>
+                    <p className="font-light mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>{solution.desc}</p>
                     <div className="hash-string">{solution.hash}</div>
                   </div>
                 </div>
@@ -117,14 +119,14 @@ export default function WhyJVTO() {
         </div>
       </section>
 
-      {/* Press Coverage */}
-      <section className="py-24 bg-slate-50">
+      {/* Press Coverage — light surface */}
+      <section className="py-24" style={{ background: '#F4F6F8' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/20 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
+            <div className="kicker mb-6">
               <Newspaper className="w-3 h-3" /> Press Recognition
             </div>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-authority-navy mb-6">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6" style={{ color: '#0F172A', letterSpacing: '-0.02em' }}>
               What the World Says
             </h2>
           </div>
@@ -136,10 +138,11 @@ export default function WhyJVTO() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="bento-card p-8"
+                className="p-8 rounded-2xl"
+                style={{ background: '#fff', border: '1px solid rgba(15,23,42,0.08)', boxShadow: '0 2px 12px rgba(15,23,42,0.06)' }}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-black text-authority-navy uppercase text-lg">{item.publisher}</span>
+                  <span className="font-black uppercase text-lg" style={{ color: '#0F172A' }}>{item.publisher}</span>
                   {item.url && item.url !== '#' && (
                     <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-safety-orange transition-colors">
                       <ExternalLink className="w-4 h-4" />
@@ -147,20 +150,20 @@ export default function WhyJVTO() {
                   )}
                 </div>
                 {item.quote && (
-                  <blockquote className="text-slate-500 italic text-sm font-light leading-relaxed mb-4">
+                  <blockquote className="italic text-sm font-light leading-relaxed mb-4" style={{ color: 'rgba(15,23,42,0.55)' }}>
                     "{item.quote}"
                   </blockquote>
                 )}
-                <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest">{item.title}</p>
-                {item.date && <p className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mt-1">{item.date}</p>}
+                <p className="font-mono text-[10px] uppercase tracking-[0.12em]" style={{ color: 'rgba(15,23,42,0.35)' }}>{item.title}</p>
+                {item.date && <p className="font-mono text-[10px] uppercase tracking-[0.12em] mt-1" style={{ color: 'rgba(15,23,42,0.35)' }}>{item.date}</p>}
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-authority-navy relative overflow-hidden">
+      {/* CTA — forensic dark */}
+      <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(140deg, #0F172A 0%, #0A1628 100%)' }}>
         <div className="scanline" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <ShieldCheck className="w-16 h-16 text-safety-orange mx-auto mb-8" />
