@@ -119,3 +119,23 @@
 - [x] Fix WhatsApp number to +62 822-4478-8833 in all static data
 - [x] TypeScript: 0 errors
 - [x] Tests: 14/14 passing
+
+## HTML Sync (reviews.html + our-team.html + verify-jvto.html) — 2026-03-19
+
+- [x] Add ktaUrl, selfQuote, memberId columns to crew table
+- [x] Add sha256, downloadUrl, description columns to proof_vault table
+- [x] Re-seed crew: 14 members with real photo URLs from javavolcano-touroperator.com server
+- [x] Re-seed crew: KTA licence URLs for Anjas, Gufron, Kiki, Rendi, Taufik
+- [x] Re-seed crew: self-quote for Anjas; member IDs for Boy (#68), Fauzi (#46), Dika (#72)
+- [x] Re-seed reviews: 8 reviews with full reviewer names, platform, crew mention name + photo
+- [x] Re-seed vault: 13 items with SHA-256 hashes, downloadUrl, description
+- [x] Re-seed partners: 7 partners with tier, verifyUrl, verifyLabel, partnerId
+- [x] Re-seed press: 4 items with publisher, date, quote, url, translatedTitle
+- [x] Rebuild Team.tsx: real crew photos, KTA badge links, self-quotes, guide/driver trust context boxes
+- [x] Rebuild Reviews.tsx: crew mention strip with photo, platform rating cards, response policy
+- [x] Rebuild VerifyJVTO.tsx: 7-section proof library (Legal/Police/History/Credentials/Press/Partners/Reputation)
+- [x] VerifyJVTO: sticky anchor nav with scroll-spy
+- [x] VerifyJVTO: SHA-256 copy-to-clipboard button
+- [x] VerifyJVTO: download + view buttons per vault item
+- [x] TypeScript: 0 errors
+- [x] Tests: 14/14 passing

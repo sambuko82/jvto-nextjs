@@ -97,12 +97,14 @@ export const crew = mysqlTable("crew", {
   credentialCardImage: text("credentialCardImage"),
   credentialAnnotations: text("credentialAnnotations").default('[]'),
   safetyMetrics: text("safetyMetrics").default('[]'),
+   ktaUrl: text("ktaUrl"),
+  selfQuote: text("selfQuote"),
+  memberId: varchar("memberId", { length: 50 }),
   isActive: boolean("isActive").default(true),
   sortOrder: int("sortOrder").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
-
 export type Crew = typeof crew.$inferSelect;
 
 // ─── Crew Reviews ─────────────────────────────────────────────────────────────
@@ -144,10 +146,14 @@ export const partners = mysqlTable("partners", {
   description: text("description"),
   tier: varchar("tier", { length: 100 }),
   logoUrl: text("logoUrl"),
+   verifyUrl: text("verifyUrl"),
+  verifyLabel: varchar("verifyLabel", { length: 200 }),
+  partnerId: varchar("partnerId", { length: 200 }),
+  liveUrl: text("liveUrl"),
+  isLiveUrl: boolean("isLiveUrl").default(false),
   sortOrder: int("sortOrder").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
-
 export type Partner = typeof partners.$inferSelect;
 
 // ─── Proof Vault ──────────────────────────────────────────────────────────────
@@ -161,10 +167,15 @@ export const proofVault = mysqlTable("proof_vault", {
   hash: varchar("hash", { length: 200 }),
   lastVerified: varchar("lastVerified", { length: 50 }),
   annotations: text("annotations").default('[]'),
+   description: text("description"),
+  downloadUrl: text("downloadUrl"),
+  sha256: varchar("sha256", { length: 200 }),
+  verifiedDate: varchar("verifiedDate", { length: 50 }),
+  type: varchar("type", { length: 100 }),
+  caption: text("caption"),
   sortOrder: int("sortOrder").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
-
 export type ProofVault = typeof proofVault.$inferSelect;
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
@@ -205,9 +216,11 @@ export const reviews = mysqlTable("reviews", {
   rating: int("rating").default(5),
   date: varchar("date", { length: 50 }),
   guideNames: text("guideNames").default('[]'),
-  isFeatured: boolean("isFeatured").default(false),
+   isFeatured: boolean("isFeatured").default(false),
+  crewMentionName: varchar("crewMentionName", { length: 200 }),
+  crewMentionPhoto: text("crewMentionPhoto"),
+  crewMentionRole: varchar("crewMentionRole", { length: 100 }),
   sortOrder: int("sortOrder").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
-
 export type Review = typeof reviews.$inferSelect;
