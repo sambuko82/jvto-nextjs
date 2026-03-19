@@ -9,16 +9,16 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 
 const HERO_STATS = [
-  { label: 'Verified Expeditions', value: '2,847+', icon: ShieldCheck },
-  { label: 'Safety Record', value: '100%', icon: Activity },
-  { label: 'Audit Score', value: '9.8/10', icon: TrendingUp },
-  { label: 'Years Active', value: '11+', icon: Clock },
+  { label: 'Independent Reviews', value: '44+', icon: Star },
+  { label: 'Trustpilot Rating', value: '4.7★', icon: ShieldCheck },
+  { label: 'TripAdvisor Rating', value: '5.0★', icon: Activity },
+  { label: 'Years Active', value: '10+', icon: Clock },
 ];
 
 const TRUST_SIGNALS = [
-  { label: 'Tourist Police Verified', status: 'VERIFIED', color: 'text-verified-bright' },
-  { label: 'POLDA Jatim Certified', status: 'CERTIFIED', color: 'text-verified-bright' },
-  { label: 'ISO 9001 Compliant', status: 'COMPLIANT', color: 'text-verified-bright' },
+  { label: 'NIB No. 1102230032918', status: 'LICENSED', color: 'text-verified-bright' },
+  { label: 'Tourist Police-Led', status: 'VERIFIED', color: 'text-verified-bright' },
+  { label: '100% Private Tours', status: 'PRIVATE', color: 'text-verified-bright' },
   { label: 'ISIC Partner', status: 'PARTNER', color: 'text-verified-bright' },
 ];
 
@@ -37,9 +37,9 @@ const TESTIMONIALS = [
 ];
 
 const PRESS_STATIC = [
-  { publisher: 'The Guardian', title: 'The tour operator that proves everything' },
-  { publisher: 'Lonely Planet', title: 'Best verified volcano tours in Indonesia' },
-  { publisher: 'National Geographic', title: 'Safety-first approach to adventure tourism' },
+  { publisher: 'Stefan Loose Travel Guides', title: 'Featured operator for East Java volcano tours' },
+  { publisher: 'Detik News', title: 'Tourist Police-Led operations for volcano safety' },
+  { publisher: 'Trustpilot', title: '4.7★ rating — 44+ independent verified reviews' },
 ];
 
 export default function Home() {
@@ -86,7 +86,7 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-8"
               >
                 <div className="status-live" />
-                <span>Forensic Audit Protocol Active</span>
+                <span>Tourist Police-Led · Licensed · Verified</span>
               </motion.div>
 
               <motion.h1
@@ -95,9 +95,9 @@ export default function Home() {
                 transition={{ delay: 0.1 }}
                 className="text-5xl md:text-7xl xl:text-8xl font-black uppercase tracking-tighter leading-[0.85] text-white mb-8"
               >
-                The Only<br />
-                <span className="text-safety-orange text-glow">Verified</span><br />
-                Volcano Tour
+                Tourist<br />
+                <span className="text-safety-orange text-glow">Police-Led</span><br />
+                Private Tours
               </motion.h1>
 
               <motion.p
@@ -106,8 +106,7 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="text-slate-400 text-xl leading-relaxed mb-10 font-light max-w-lg"
               >
-                Every guide credential, safety metric, and legal document is publicly auditable.
-                We don't ask for trust — we provide proof.
+                Java Volcano Tour Operator (JVTO) — private volcano tours to Mount Bromo, Kawah Ijen, and Tumpak Sewu, founded by active Tourist Police officer Bripka Agung Sambuko. Licensed under PT Java Volcano Rendezvous (NIB: 1102230032918). Marketing promises are cheap; operational discipline is verifiable.
               </motion.p>
 
               <motion.div
@@ -118,7 +117,7 @@ export default function Home() {
               >
                 <Link href="/tours">
                   <button className="group bg-safety-orange hover:bg-safety-orange/90 text-white px-8 py-4 rounded-xl font-black uppercase tracking-wider text-sm transition-all shadow-xl shadow-safety-orange/20 flex items-center gap-3">
-                    Audit Our Tours <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Browse All Tours <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </Link>
                 <Link href="/verify-jvto">
@@ -161,19 +160,19 @@ export default function Home() {
                 </div>
                 <div className="space-y-3 font-mono text-[12px]">
                   <div className="text-slate-500">$ <span className="text-white">audit --entity=JVTO --depth=full</span></div>
-                  <div className="text-verified-bright">✓ Tourist Police Certificate: VERIFIED</div>
-                  <div className="text-verified-bright">✓ POLDA Jatim License: VERIFIED</div>
-                  <div className="text-verified-bright">✓ Guide Credentials: 8/8 VERIFIED</div>
-                  <div className="text-verified-bright">✓ Safety Record: 2,847 trips / 0 incidents</div>
-                  <div className="text-verified-bright">✓ Press Coverage: 12 outlets VERIFIED</div>
+                  <div className="text-verified-bright">✓ NIB No. 1102230032918: VERIFIED at oss.go.id</div>
+                  <div className="text-verified-bright">✓ Tourist Police SPRIN: ACTIVE (Ditpamobvit)</div>
+                  <div className="text-verified-bright">✓ Medical License STR: QN00001073380217 ACTIVE</div>
+                  <div className="text-verified-bright">✓ HPWKI Guide Licenses: ALL GUIDES VERIFIED</div>
+                  <div className="text-verified-bright">✓ Trustpilot: 4.7★ · TripAdvisor: 5.0★</div>
                   <div className="text-slate-500">$ <span className="text-white">generate --report</span></div>
                   <div className="flex items-center gap-2 text-safety-orange">
                     <Activity className="w-3 h-3 animate-pulse" />
                     <span>Generating audit report... {auditTick % 3 === 0 ? '|' : auditTick % 3 === 1 ? '/' : '-'}</span>
                   </div>
                   <div className="mt-4 p-3 bg-verified-bright/10 border border-verified-bright/20 rounded-xl">
-                    <div className="text-verified-bright font-black text-sm uppercase mb-1">AUDIT_SCORE: 9.8/10</div>
-                    <div className="text-slate-400 text-[11px]">Highest rated operator in East Java</div>
+                    <div className="text-verified-bright font-black text-sm uppercase mb-1">OPERATIONAL CERTAINTY: VERIFIED</div>
+                    <div className="text-slate-400 text-[11px]">Plan First, Then Decide — Read the Rulebook Before You Book</div>
                   </div>
                 </div>
               </div>
@@ -218,9 +217,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: ShieldCheck, title: 'Verified Credentials', desc: 'Every guide, every certificate, every legal document is publicly accessible and hash-verified.', link: '/verify-jvto', cta: 'Audit Evidence' },
-              { icon: Users, title: 'Expert Team', desc: 'Local guides with 5–15 years of experience, tourist police-verified, and continuously trained.', link: '/team', cta: 'Meet the Team' },
-              { icon: Award, title: 'Press Recognition', desc: 'Featured in The Guardian, Lonely Planet, National Geographic, and 9 other major outlets.', link: '/why-jvto', cta: 'View Press' },
+              { icon: ShieldCheck, title: 'Duty First, Business Second', desc: 'JVTO was founded by active Tourist Police officer Bripka Agung Sambuko. Every policy exists to protect you — not to make the sale easier.', link: '/why-jvto', cta: 'Read Our Story' },
+              { icon: Users, title: '100% Private — Always', desc: 'JVTO has never offered shared tours and never will. Your group gets its own vehicle, driver, and guide. This is not a premium upgrade; it is the only way JVTO operates.', link: '/team', cta: 'Meet the Crew' },
+              { icon: Award, title: 'Verifiable, Not Just Claimed', desc: 'Business license (NIB: 1102230032918) verifiable at oss.go.id. Tourist Police SPRIN, medical license STR, and guide certifications — all in our Proof Library with SHA-256 hashes.', link: '/verify-jvto', cta: 'Open Proof Library' },
             ].map((item) => {
               const Icon = item.icon;
               return (
@@ -255,7 +254,7 @@ export default function Home() {
                 <MapPin className="w-3 h-3" /> Verified Destinations
               </div>
               <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-authority-navy">
-                Expedition Registry
+                East Java Destinations
               </h2>
             </div>
             <Link href="/destinations">
@@ -304,7 +303,7 @@ export default function Home() {
                     <div className="p-4 flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-verified-bright" />
-                        <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Verified Route</span>
+                        <span className="font-mono text-[10px] text-slate-500 uppercase tracking-widest">Private Tour Available</span>
                       </div>
                       <ArrowRight className="w-4 h-4 text-safety-orange group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -346,7 +345,7 @@ export default function Home() {
               <Star className="w-3 h-3" /> Verified Guest Reports
             </div>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-authority-navy">
-              Expedition Debriefs
+              What Guests Say
             </h2>
           </div>
 
@@ -392,21 +391,21 @@ export default function Home() {
           >
             <ShieldCheck className="w-16 h-16 text-safety-orange mx-auto mb-8" />
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white mb-6">
-              Ready to Deploy<br />
-              <span className="text-safety-orange">Your Expedition?</span>
+              Plan First,<br />
+              <span className="text-safety-orange">Then Decide.</span>
             </h2>
             <p className="text-slate-400 text-xl mb-10 font-light">
-              Join 2,847+ verified travelers who chose proof over promises.
+              Read the rulebook before you book. Every policy, every credential, every price — transparent before you commit. No pressure. No hidden fees. Just operational certainty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/tours">
                 <button className="group bg-safety-orange hover:bg-safety-orange/90 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider text-sm transition-all shadow-xl shadow-safety-orange/20 flex items-center gap-3 mx-auto sm:mx-0">
-                  Browse Verified Tours <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  Browse All Tours <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
-              <Link href="/why-jvto">
+                <Link href="/faq">
                 <button className="group bg-white/5 border border-white/10 hover:bg-white/10 text-white px-10 py-5 rounded-xl font-black uppercase tracking-wider text-sm transition-all flex items-center gap-3 mx-auto sm:mx-0">
-                  <AlertTriangle className="w-5 h-5" /> Why This Matters
+                  <ShieldCheck className="w-5 h-5" /> Read the FAQ
                 </button>
               </Link>
             </div>

@@ -80,3 +80,25 @@
 - [ ] SEO meta tags and structured data (JSON-LD)
 - [ ] Sitemap.xml generation
 - [ ] Integrate full content from live JVTO website (javavolcano-touroperator.com)
+
+## Audit Consolidation — Brand Voice & Content Optimization (2026-03-19)
+- [x] Update seed data: 7 tours, 12 FAQ, 8 reviews, 6 press, 6 vault items, correct IDR pricing
+- [x] Update Home page: entity anchor paragraph, "Tourist Police-Led" hero, real stats (44+ reviews, 4.7★, 5.0★)
+- [x] Update Home trust signals: NIB number, 100% Private, Tourist Police-Led, ISIC Partner
+- [x] Update Home audit terminal: real credentials (NIB, SPRIN, STR, HPWKI)
+- [x] Update Home Why JVTO cards: Duty First / 100% Private / Verifiable copy
+- [x] Update Home CTA: "Plan First, Then Decide" messaging
+- [x] Rewrite TopNav: dropdown menus, WhatsApp CTA, correct nav labels
+- [x] Rewrite Footer: full nav links, contact card, correct WhatsApp (+62 822-4478-8833), policy links
+- [x] Rewrite BookingRail: correct WhatsApp number, brand-aligned copy, always-active CTA
+- [x] Add Our Story page (/our-story): full timeline (2010–2026), founder quote, 5 principles
+- [x] Add /our-story route to App.tsx
+- [x] TypeScript: 0 errors
+- [x] Tests: 14/14 passing
+- [ ] Update Destinations page: entity anchors, geo-signal sentences
+- [ ] Update Tours page: price format IDR X,XXX,XXX / person
+- [ ] Update Why JVTO page: AggregateRating schema
+- [ ] Update FAQ page: FAQPage schema
+- [ ] Add Google Maps integration for destination locations
+- [ ] Add booking form with WhatsApp/email notification
+- [ ] Sitemap.xml generation

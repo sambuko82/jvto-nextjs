@@ -22,6 +22,7 @@ import Reviews from "./pages/Reviews";
 import ISIC from "./pages/ISIC";
 import BookingPolicy from "./pages/BookingPolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import OurStory from "./pages/OurStory";
 
 function Router() {
   return (
@@ -57,6 +58,9 @@ function Router() {
       {/* ISIC */}
       <Route path="/isic" component={ISIC} />
       <Route path="/student-packages" component={ISIC} />
+      
+      {/* Our Story */}
+      <Route path="/our-story" component={OurStory} />
       
       {/* Policy Pages */}
       <Route path="/booking-policy" component={BookingPolicy} />
