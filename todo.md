@@ -95,10 +95,27 @@
 - [x] Add /our-story route to App.tsx
 - [x] TypeScript: 0 errors
 - [x] Tests: 14/14 passing
+- [x] Update Tours page: IDR pricing, dual filter (departure + duration), 16 packages
+- [x] Update FAQ page: FAQPage JSON-LD schema injected
 - [ ] Update Destinations page: entity anchors, geo-signal sentences
-- [ ] Update Tours page: price format IDR X,XXX,XXX / person
-- [ ] Update Why JVTO page: AggregateRating schema
-- [ ] Update FAQ page: FAQPage schema
 - [ ] Add Google Maps integration for destination locations
 - [ ] Add booking form with WhatsApp/email notification
 - [ ] Sitemap.xml generation
+
+## SSOT v4.0 + GEO/AEO Audit Consolidation (2026-03-19)
+- [x] Re-seed: 16 tours, 14 crew, 5 destinations, 12 FAQ, 8 reviews, 5 press, 5 partners, 6 vault, 21 page meta
+- [x] Add departureFrom + physicality columns to tours table
+- [x] Add isFeatured column to reviews table
+- [x] Update Tours.tsx: 16 packages, dual filter, loading skeleton, empty state
+- [x] Update Team.tsx: 14 crew from DB, dynamic count, remove static fallback
+- [x] Create JsonLd.tsx: TravelAgency, TouristTrip, TouristAttraction, FAQPage, BreadcrumbList factories
+- [x] Inject TravelAgency + WebSite JSON-LD into GlobalLayout (all pages)
+- [x] Inject TouristTrip JSON-LD into TourDetail page
+- [x] Inject TouristAttraction JSON-LD into DestinationDetail page
+- [x] Inject FAQPage JSON-LD into FAQ page
+- [x] Create /llms.txt — AI crawler discovery file
+- [x] Create /ai-agent-config.json — structured entity data for AI agents
+- [x] Create /robots.txt — explicit AI crawler permissions (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
+- [x] Fix WhatsApp number to +62 822-4478-8833 in all static data
+- [x] TypeScript: 0 errors
+- [x] Tests: 14/14 passing

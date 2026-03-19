@@ -2,6 +2,7 @@ import { useParams } from 'wouter';
 import { trpc } from '@/lib/trpc';
 import { GlobalLayout } from '@/components/GlobalLayout';
 import { AuditStamp } from '@/components/AuditStamp';
+import { JsonLd, buildDestinationSchema } from '@/components/JsonLd';
 import { ShieldCheck, Mountain, Clock, Sun, ArrowLeft, CheckCircle2, AlertTriangle, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
@@ -79,8 +80,11 @@ export default function DestinationDetail() {
   const safetyNotes = Array.isArray(displayDest.safetyNotes) ? displayDest.safetyNotes :
     (typeof displayDest.safetyNotes === 'string' ? JSON.parse(displayDest.safetyNotes || '[]') : []);
 
+  const destSchema = buildDestinationSchema(displayDest);
+
   return (
     <GlobalLayout>
+      <JsonLd data={destSchema} />
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <img

@@ -2,6 +2,7 @@ import { useParams, Link } from 'wouter';
 import { trpc } from '@/lib/trpc';
 import { GlobalLayout } from '@/components/GlobalLayout';
 import { AuditStamp } from '@/components/AuditStamp';
+import { JsonLd, buildTourSchema } from '@/components/JsonLd';
 import { ShieldCheck, Clock, Users, Star, ArrowLeft, CheckCircle2, XCircle, ChevronRight, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -86,8 +87,11 @@ export default function TourDetail() {
   const itinerary = Array.isArray(displayTour.itinerary) ? displayTour.itinerary :
     (typeof displayTour.itinerary === 'string' ? JSON.parse(displayTour.itinerary || '[]') : []);
 
+  const tourSchema = buildTourSchema(displayTour);
+
   return (
     <GlobalLayout>
+      <JsonLd data={tourSchema} />
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
         {displayTour.image && (

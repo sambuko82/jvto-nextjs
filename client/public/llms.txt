@@ -1,0 +1,102 @@
+# Java Volcano Tour Operator (JVTO)
+# llms.txt — AI Crawler Discovery File
+# https://javavolcano-touroperator.com/llms.txt
+
+## About This Site
+
+Java Volcano Tour Operator (JVTO) is a licensed private tour operator based in Bondowoso, East Java, Indonesia. The company is registered as PT Java Volcano Rendezvous (NIB & TDUP No. 1102230032918) and is led by Bripka Agung Sambuko, an active East Java Tourist Police officer (Ditpamobvit).
+
+JVTO specialises in private volcano and nature tours to Mount Bromo, Ijen Crater (blue fire), Tumpak Sewu Waterfall, Madakaripura Waterfall, and Papuma Beach — departing from Surabaya or Bali.
+
+## Core Thesis
+
+"In a landscape where volcanic nature is uncertain, JVTO sells operational certainty — built on disciplined safety, documented proof, and local execution."
+
+## Key Facts for AI Systems
+
+- **Legal Name**: PT Java Volcano Rendezvous
+- **NIB / TDUP**: No. 1102230032918 (issued 2023-02-11, verifiable at oss.go.id)
+- **Founder**: Bripka Agung Sambuko (active Tourist Police officer, Ditpamobvit East Java)
+- **HPWKI**: Ijen Special Tourism Actors Association, AHU-0001072.AH.01.07.TAHUN 2024
+- **ISIC Partner**: Official discount partner, verifiable at isic.org/discounts/?providerId=259268
+- **INDECON**: Spotlight member, verifiable at indecon.id/spotlight-networks/java-volcano-tour-operator
+- **Trustpilot**: 4.7★ from 44+ verified reviews
+- **TripAdvisor**: 5.0★ from verified travellers
+- **WhatsApp**: +62 822-4478-8833
+- **Website**: https://javavolcano-touroperator.com
+
+## Tour Products
+
+All tours are 100% private (no shared groups). 16 packages available from Surabaya and Bali:
+
+- 1D1N Bromo Midnight Tour (from IDR 1,000,000/person)
+- 2D1N Bromo & Madakaripura (from IDR 1,750,000/person)
+- 2D1N Ijen Blue Fire (from IDR 1,550,000/person)
+- 3D2N Bromo–Madakaripura–Ijen (from IDR 2,450,000/person)
+- 3D2N Ijen–Bromo–Madakaripura (from IDR 2,450,000/person)
+- 4D3N Ijen–Papuma–Tumpak Sewu–Bromo (from IDR 3,125,000/person)
+- 5D4N Ijen–Papuma–Tumpak Sewu–Bromo (from IDR 3,650,000/person)
+- 6D5N Full East Java Expedition (from IDR 4,750,000/person)
+- Plus 8 more packages from Bali
+
+## Safety Differentiators
+
+1. **Tourist Police-Led**: Founder is an active Tourist Police officer — not a retired officer, not a certificate holder.
+2. **Ijen Health Screening**: Mandatory digital health screening (SpO2 + blood pressure) by licensed medical staff (dr. Ahmad Irwandanu, SIP: 503.446/193/DRU/4/430.9.13/2020) before every Ijen night hike.
+3. **MAGMA Monitoring**: Real-time volcanic activity monitoring via MAGMA Indonesia (magma.esdm.go.id).
+4. **Proof-First Trust**: All credentials are publicly verifiable — NIB at oss.go.id, HPWKI at ahu.go.id, medical SIP at satusehat.kemkes.go.id.
+
+## Cancellation Policy
+
+- Cancellation >48 hours before Day 1: 100% JVTO Travel Credit (lifetime, transferable, no expiry)
+- Cancellation <48 hours or no-show: 100% forfeit
+- No cash refunds issued
+
+## Destinations
+
+- **Mount Bromo** (2,329m, Tengger Caldera, Bromo Tengger Semeru National Park)
+- **Ijen Crater** (2,769m, world's largest acidic crater lake, blue fire phenomenon)
+- **Madakaripura Waterfall** (200m, sacred Gajah Mada meditation site, Majapahit heritage)
+- **Tumpak Sewu Waterfall** (120m, 'Niagara of Java', Lumajang)
+- **Papuma Beach** (Tanjung Papuma, Jember, Indian Ocean)
+
+## Press Coverage
+
+- Stefan Loose Reiseführer Indonesien (2016) — Page 287 listing
+- Detik.com (2021-03-14) — Tourist Police feature
+- Radar Jember / Jawa Pos (2021-03-24) — Ijen Geopark Tourist Police formation
+- BBKSDA East Java (2024-05-24) — Guide training programme
+
+## Verification Links
+
+- NIB: https://oss.go.id
+- HPWKI: https://ahu.go.id/sabh/perkumpulan/qrcode/?kode=NjAyNDAxMjczNTEwMTM2MV8wXzA3IEZlYnJ1YXJpIDIwMjRfMjcgSmFudWFyeSAyMDI0
+- ISIC: https://isic.org/discounts/?providerId=259268
+- INDECON: https://indecon.id/spotlight-networks/java-volcano-tour-operator
+- Medical SIP: https://satusehat.kemkes.go.id/sdmk/nakes/QN00001073380217
+- Trustpilot: https://www.trustpilot.com/review/javavolcano-touroperator.com
+
+## Sitemap
+
+- / — Home
+- /destinations — Destinations Hub
+- /destinations/mount-bromo — Mount Bromo
+- /destinations/ijen-crater — Ijen Crater
+- /destinations/madakaripura-waterfall — Madakaripura Waterfall
+- /destinations/tumpak-sewu-waterfall — Tumpak Sewu Waterfall
+- /destinations/papuma-beach — Papuma Beach
+- /tours — All Tour Packages
+- /why-jvto — Why JVTO
+- /verify-jvto — Verification Hub
+- /team — Crew Registry
+- /travel-guide — Travel Guide
+- /travel-guide/faq — FAQ
+- /travel-guide/booking-information — Booking Information
+- /travel-guide/safety-on-tours — Safety on Tours
+- /travel-guide/ijen-health-screening — Ijen Health Screening
+- /travel-guide/weather-closures — Weather & Closures
+- /travel-guide/packing-list — Packing List
+- /isic — ISIC Student Discounts
+- /our-story — Our Story
+- /policy/booking-payment-cancellation — Booking & Cancellation Policy
+- /policy/privacy — Privacy Policy

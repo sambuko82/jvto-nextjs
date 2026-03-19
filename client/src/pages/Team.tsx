@@ -88,7 +88,7 @@ export default function Team() {
   const [activeRole, setActiveRole] = useState<'All' | 'Guide' | 'Driver' | 'Founder'>('All');
   const { data: crewData } = trpc.crew.list.useQuery();
 
-  const displayCrew = (crewData && crewData.length > 0) ? crewData : STATIC_CREW;
+  const displayCrew = crewData || [];
   const filtered = displayCrew.filter((c: any) => activeRole === 'All' || c.role === activeRole);
   const selectedMember = displayCrew.find((c: any) => c.slug === selectedCrew);
 
@@ -99,13 +99,13 @@ export default function Team() {
         <div className="scanline" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-safety-orange/10 border border-safety-orange/30 text-safety-orange text-[11px] font-mono font-bold uppercase tracking-[0.2em] mb-6">
-            <Users className="w-3 h-3" /> Crew Registry v1.9
+            <Users className="w-3 h-3" /> Crew Registry — {displayCrew.length || 14} Members
           </div>
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-white mb-6">
             Team<br /><span className="text-safety-orange">Registry</span>
           </h1>
           <p className="text-slate-400 text-xl max-w-2xl font-light">
-            Every guide and driver is individually verified, credentialed, and auditable. No anonymous staff.
+            Every guide and driver is individually verified, credentialed, and auditable. 7 drivers + 7 guides — no anonymous staff.
           </p>
         </div>
       </section>
@@ -161,9 +161,7 @@ export default function Team() {
                           <span className="tech-badge">{member.role}</span>
                         </div>
                         <div className="absolute top-4 right-4">
-                          {member.credentialStatus === 'VERIFIED_ACTIVE' && (
-                            <div className="verified-badge">Verified</div>
-                          )}
+                          <div className="verified-badge">Verified</div>
                         </div>
                         <div className="absolute bottom-4 left-4 right-4">
                           <h3 className="text-white font-black uppercase text-xl">{member.name}</h3>

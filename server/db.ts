@@ -146,7 +146,7 @@ export async function getReviews(featured?: boolean) {
   const db = await getDb();
   if (!db) return [];
   if (featured !== undefined) {
-    return db.select().from(reviews).where(eq(reviews.isFeature, featured)).orderBy(asc(reviews.sortOrder));
+    return db.select().from(reviews).where(eq(reviews.isFeatured, featured)).orderBy(asc(reviews.sortOrder));
   }
   return db.select().from(reviews).orderBy(asc(reviews.sortOrder));
 }

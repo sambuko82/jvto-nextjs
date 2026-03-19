@@ -3,6 +3,7 @@ import { TopNav } from './TopNav';
 import { BottomNav } from './BottomNav';
 import { BookingRail } from './BookingRail';
 import { Footer } from './Footer';
+import { JsonLd, JVTO_ORGANIZATION_SCHEMA, JVTO_WEBSITE_SCHEMA } from './JsonLd';
 import { useLocation } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -20,6 +21,7 @@ export const GlobalLayout = ({ children, showFooter = true }: GlobalLayoutProps)
 
   return (
     <div className="min-h-screen flex flex-col bg-audit-white">
+      <JsonLd data={[JVTO_ORGANIZATION_SCHEMA, JVTO_WEBSITE_SCHEMA]} />
       <TopNav />
       <AnimatePresence mode="wait">
         <motion.main

@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { trpc } from '@/lib/trpc';
 import { GlobalLayout } from '@/components/GlobalLayout';
 import { AuditStamp } from '@/components/AuditStamp';
+import { JsonLd, buildFAQSchema } from '@/components/JsonLd';
 import { HelpCircle, ChevronDown, ChevronUp, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const STATIC_FAQS = [
-  { id: '1', category: 'booking', question: 'How do I book a tour?', answer: 'Contact us via WhatsApp at +62 812-3506-1451 or use the booking form on our website. We respond within 2 hours during business hours (7am–9pm WIB).' },
+  { id: '1', category: 'booking', question: 'How do I book a tour?', answer: 'Contact us via WhatsApp at +62 822-4478-8833 or use the booking form on our website. We respond within 2 hours during business hours (7am–9pm WIB).' },
   { id: '2', category: 'booking', question: 'What is the minimum group size?', answer: 'We offer private tours for individuals and groups of any size. There is no minimum group size — we specialize in private, personalized expeditions.' },
   { id: '3', category: 'booking', question: 'How far in advance should I book?', answer: 'We recommend booking at least 3–7 days in advance, especially during peak season (June–August). Last-minute bookings are sometimes possible — contact us to check availability.' },
   { id: '4', category: 'payment', question: 'What payment methods do you accept?', answer: 'We accept bank transfer (BCA, Mandiri, BNI), PayPal, Wise, and cash (IDR). A 30% deposit is required to confirm your booking, with the balance due on the day of the tour.' },
@@ -45,8 +46,13 @@ export default function FAQ() {
     faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const faqSchemaData = filtered.length > 0 ? buildFAQSchema(
+    filtered.map((f: any) => ({ question: f.question, answer: f.answer }))
+  ) : null;
+
   return (
     <GlobalLayout>
+      {faqSchemaData && <JsonLd data={faqSchemaData} />}
       {/* Header */}
       <section className="bg-authority-navy py-24 relative overflow-hidden">
         <div className="scanline" />

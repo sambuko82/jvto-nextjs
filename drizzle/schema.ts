@@ -54,6 +54,8 @@ export const tours = mysqlTable("tours", {
   id: int("id").autoincrement().primaryKey(),
   slug: varchar("slug", { length: 200 }).notNull().unique(),
   name: varchar("name", { length: 300 }).notNull(),
+  departureFrom: varchar("departureFrom", { length: 100 }).default("Surabaya"),
+  physicality: varchar("physicality", { length: 50 }).default("moderate"),
   departure: mysqlEnum("departure", ["surabaya", "bali"]).notNull(),
   duration: varchar("duration", { length: 100 }).notNull(),
   durationDays: int("durationDays").notNull(),
@@ -203,7 +205,7 @@ export const reviews = mysqlTable("reviews", {
   rating: int("rating").default(5),
   date: varchar("date", { length: 50 }),
   guideNames: text("guideNames").default('[]'),
-  isFeature: boolean("isFeature").default(false),
+  isFeatured: boolean("isFeatured").default(false),
   sortOrder: int("sortOrder").default(0),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
