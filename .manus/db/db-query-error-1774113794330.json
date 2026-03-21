@@ -1,0 +1,8 @@
+{
+  "query": "\nALTER TABLE reviews ADD COLUMN trustpilotUrl VARCHAR(500) AFTER url;\nALTER TABLE reviews ADD COLUMN crewId INT AFTER trustpilotUrl;\nALTER TABLE reviews ADD CONSTRAINT fk_reviews_crew FOREIGN KEY (crewId) REFERENCES crew(id) ON DELETE SET NULL;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2G9ctzHa7CmmnQg.87c036b4218d --database coxTkGwL925usDqc3yJ9v3 --execute \nALTER TABLE reviews ADD COLUMN trustpilotUrl VARCHAR(500) AFTER url;\nALTER TABLE reviews ADD COLUMN crewId INT AFTER trustpilotUrl;\nALTER TABLE reviews ADD CONSTRAINT fk_reviews_crew FOREIGN KEY (crewId) REFERENCES crew(id) ON DELETE SET NULL;\n",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 2: Unknown column 'url' in 'reviews'"
+  ]
+}

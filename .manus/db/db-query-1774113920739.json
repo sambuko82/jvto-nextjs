@@ -1,0 +1,66 @@
+{
+  "query": "SELECT id, name FROM crew LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2G9ctzHa7CmmnQg.87c036b4218d --database coxTkGwL925usDqc3yJ9v3 --execute SELECT id, name FROM crew LIMIT 20;",
+  "rows": [
+    {
+      "id": "60023",
+      "name": "Anjas"
+    },
+    {
+      "id": "60024",
+      "name": "Boy (Ahboy)"
+    },
+    {
+      "id": "60025",
+      "name": "Fauzi"
+    },
+    {
+      "id": "60026",
+      "name": "Gufron"
+    },
+    {
+      "id": "60027",
+      "name": "Kiki"
+    },
+    {
+      "id": "60028",
+      "name": "Rendi"
+    },
+    {
+      "id": "60029",
+      "name": "Taufik"
+    },
+    {
+      "id": "60030",
+      "name": "Fredi"
+    },
+    {
+      "id": "60031",
+      "name": "Yandi"
+    },
+    {
+      "id": "60032",
+      "name": "Holili"
+    },
+    {
+      "id": "60033",
+      "name": "Joyo"
+    },
+    {
+      "id": "60034",
+      "name": "Dika"
+    },
+    {
+      "id": "60035",
+      "name": "Pras"
+    },
+    {
+      "id": "60036",
+      "name": "Yusuf"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n60023\tAnjas\n60024\tBoy (Ahboy)\n60025\tFauzi\n60026\tGufron\n60027\tKiki\n60028\tRendi\n60029\tTaufik\n60030\tFredi\n60031\tYandi\n60032\tHolili\n60033\tJoyo\n60034\tDika\n60035\tPras\n60036\tYusuf\n",
+  "stderr": "",
+  "execution_time_ms": 1540
+}

@@ -139,3 +139,15 @@
 - [x] VerifyJVTO: download + view buttons per vault item
 - [x] TypeScript: 0 errors
 - [x] Tests: 14/14 passing
+
+
+## Trustpilot Integration (2026-03-21)
+
+- [x] Create Trustpilot scraper to extract all 31 reviews from javavolcano-touroperator.com
+- [x] Parse review text to identify crew mentions (Yandi: 8, Rendi: 7, Ahboy: 4, Gufron: 3, etc.)
+- [x] Add trustpilotUrl and crewId columns to reviews table
+- [x] Seed database with 31 Trustpilot reviews with crew linkages
+- [x] Update Reviews.tsx to display Trustpilot data with crew mention cards
+- [x] Verify all crew mentions correlate correctly with crew database (crew IDs 60023-60036)
+- [x] TypeScript: 0 errors
+- [x] Tests: 14/14 passing
