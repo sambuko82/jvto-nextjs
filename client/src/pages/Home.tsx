@@ -88,14 +88,14 @@ export default function Home() {
             {/* Hero CTA Row */}
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <Link href="/tours">
-                <a className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
+                <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
                   Browse Private Tours
-                </a>
+                </button>
               </Link>
               <Link href="/verify-jvto">
-                <a className="px-8 py-4 border-2 border-slate-400 text-white font-bold rounded-lg hover:bg-slate-700 transition">
+                <button className="px-8 py-4 border-2 border-slate-400 text-white font-bold rounded-lg hover:bg-slate-700 transition">
                   Verify Our Credentials
-                </a>
+                </button>
               </Link>
             </div>
           </div>
@@ -215,14 +215,14 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row gap-4 justify-center mt-12">
               <Link href="/why-jvto">
-                <a className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
+                <button className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
                   Why We Are Different →
-                </a>
+                </button>
               </Link>
               <Link href="/verify-jvto">
-                <a className="px-6 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition">
+                <button className="px-6 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition">
                   Open the Verification Library →
-                </a>
+                </button>
               </Link>
             </div>
           </div>
@@ -255,9 +255,9 @@ export default function Home() {
 
             <div className="text-center mt-12">
               <Link href="/destinations">
-                <a className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
+                <button className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
                   All Destinations →
-                </a>
+                </button>
               </Link>
             </div>
           </div>
@@ -282,9 +282,9 @@ export default function Home() {
                 </div>
                 <p className="text-slate-600 mb-6">Best for: travelers arriving into East Java directly, or starting an overland route from Surabaya before connecting to Bali.</p>
                 <Link href="/tours">
-                  <a className="inline-block px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
+                  <button className="inline-block px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
                     Browse Surabaya Tours →
-                  </a>
+                  </button>
                 </Link>
               </div>
 
@@ -300,9 +300,9 @@ export default function Home() {
                 </div>
                 <p className="text-slate-600 mb-6">Best for: travelers already in Bali who want a connected East Java route without arranging transfers separately.</p>
                 <Link href="/tours">
-                  <a className="inline-block px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
+                  <button className="inline-block px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
                     Browse Bali Tours →
-                  </a>
+                  </button>
                 </Link>
               </div>
             </div>
@@ -313,7 +313,7 @@ export default function Home() {
                 <strong>ⓘ Pricing shown is per-person, group-scaled.</strong> The rate decreases with more travelers in your group. For 2 people on a 3-day tour: from IDR 3,570,000/pax. Full pricing table is shown on every individual tour page.
               </p>
               <Link href="/policy/booking-payment-cancellation">
-                <a className="text-blue-600 font-bold text-sm hover:text-blue-700">How pricing works →</a>
+                <span className="text-blue-600 font-bold text-sm hover:text-blue-700 cursor-pointer">How pricing works →</span>
               </Link>
             </div>
           </div>
@@ -369,9 +369,9 @@ export default function Home() {
 
             <div className="text-center mt-12">
               <Link href="/tours">
-                <a className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
+                <button className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
                   View All 16 Tour Packages →
-                </a>
+                </button>
               </Link>
             </div>
           </div>
@@ -438,14 +438,14 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <Link href="/our-story">
-                <a className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
+                <button className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
                   Read the Full Story →
-                </a>
+                </button>
               </Link>
               <Link href="/team">
-                <a className="px-6 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition">
+                <button className="px-6 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition">
                   Meet the 14-Person Team →
-                </a>
+                </button>
               </Link>
               <Link href="/verify-jvto">
                 <a className="px-6 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition">
@@ -499,9 +499,9 @@ export default function Home() {
                 JVTO is an official ISIC partner. If you hold a valid ISIC card, you qualify for a student rate on selected packages.
               </p>
               <Link href="/isic">
-                <a className="inline-block px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
+                <button className="inline-block px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
                   Check ISIC Eligibility →
-                </a>
+                </button>
               </Link>
             </div>
           </div>
@@ -535,9 +535,9 @@ export default function Home() {
             </div>
 
             <Link href="/travel-guide">
-              <a className="inline-block px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
+              <button className="inline-block px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition">
                 Open Travel Guide →
-              </a>
+              </button>
             </Link>
           </div>
         </section>
@@ -567,8 +567,8 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-slate-700 mb-6">Independent, open to any customer</p>
-                <a href="https://www.trustpilot.com/review/javavolcano-touroperator.com" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
-                  Open Trustpilot Profile ↗
+                <a href="https://www.trustpilot.com/review/javavolcano-touroperator.com" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition" style={{textDecoration: 'none'}}>
+                  Open Trustpilot Profile ↑
                 </a>
               </div>
 
@@ -587,8 +587,8 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-slate-700 mb-6">Trusted travel review source</p>
-                <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
-                  Open TripAdvisor Profile ↗
+                <a href="https://www.tripadvisor.com" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition" style={{textDecoration: 'none'}}>
+                  Open TripAdvisor Profile ↑
                 </a>
               </div>
 
@@ -607,20 +607,20 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-slate-700 mb-6">Verified business listing</p>
-                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition">
-                  Open Google Maps ↗
+                <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-2 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition" style={{textDecoration: 'none'}}>
+                  Open Google Maps Profile ↑
                 </a>
               </div>
             </div>
 
             <div className="text-center">
               <Link href="/reviews">
-                <a className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition mr-4">
-                  Full Reviews Registry →
-                </a>
+                <button className="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition mr-4">
+                  Verify JVTO Independently →
+                </button>
               </Link>
-              <a href="https://indecon.id" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition">
-                JVTO on Indecon →
+              <a href="https://indecon.id" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 border-2 border-slate-900 text-slate-900 font-bold rounded-lg hover:bg-slate-100 transition" style={{textDecoration: 'none'}}>
+                Learn More About INDECON ↑
               </a>
             </div>
           </div>
@@ -645,7 +645,7 @@ export default function Home() {
                   <li>· PT registration at ahu.go.id</li>
                 </ul>
                 <Link href="/verify-jvto">
-                  <a className="text-orange-600 font-bold hover:text-orange-700">Verify Legal Identity →</a>
+                  <span className="text-orange-600 font-bold hover:text-orange-700 cursor-pointer">Verify Legal Identity →</span>
                 </Link>
               </div>
 
