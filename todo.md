@@ -153,25 +153,31 @@
 - [x] Tests: 14/14 passing
 
 
-## Reviews Filter & Sort + Homepage Blueprint FINAL (2026-03-22)
+## Reviews Filter & Sort (2026-03-23)
 
-- [ ] Add reviews.listFiltered tRPC procedure with rating and crewId filters
-- [ ] Add reviews.listSorted tRPC procedure with sort options (newest, rating-high, rating-low)
-- [ ] Update Reviews.tsx: add filter bar (rating dropdown, crew dropdown), sort selector
-- [ ] Update Reviews.tsx: implement dynamic review loading based on filters
-- [ ] Rebuild Home.tsx Section A: TopNav with exact labels and CTAs
-- [ ] Rebuild Home.tsx Section B: Hero with trust strip and CTA row
-- [ ] Rebuild Home.tsx Section C: Entity anchor block (What Is JVTO)
-- [ ] Rebuild Home.tsx Section D: 6-card grid (Duty First, Business Second)
-- [ ] Rebuild Home.tsx Section E: Destinations preview (5 cards)
-- [ ] Rebuild Home.tsx Section F: Choose Departure City (Surabaya / Bali toggle)
-- [ ] Rebuild Home.tsx Section G: Featured Tours (6 tours from DB)
-- [ ] Rebuild Home.tsx Section H: Founder / Our Story block
-- [ ] Rebuild Home.tsx Section I: Independent Review Sources (Trustpilot, TripAdvisor, Google)
-- [ ] Rebuild Home.tsx Section J: Verify JVTO teaser (3-card proof preview)
-- [ ] Rebuild Home.tsx Section K: Travel Guide teasers (4 guides)
-- [ ] Rebuild Home.tsx Section L: Pre-Footer CTA band (3 actions)
-- [ ] Rebuild Home.tsx Section M: Footer with verify links cluster
-- [ ] Verify all links live (no 404s)
-- [ ] TypeScript: 0 errors
-- [ ] Tests: 14/14 passing
+- [x] Add reviews.listFiltered tRPC procedure with rating and crewId filters
+- [x] Add reviews.listSorted tRPC procedure with sort options (newest, rating-high, rating-low)
+- [x] Update Reviews.tsx: add filter bar (rating dropdown, crew dropdown), sort selector
+- [x] Update Reviews.tsx: implement dynamic review loading based on filters
+- [x] TypeScript: 0 errors
+- [x] Tests: 14/14 passing
+
+## Homepage Blueprint FINAL Implementation (2026-03-24)
+
+- [x] Rebuild Home.tsx Section A: TopNav with exact labels
+- [x] Rebuild Home.tsx Section B: Hero with eyebrow, H1, subheadline, trust strip, CTA row
+- [x] Rebuild Home.tsx Section C: Entity Anchor / Direct-Answer Intro Block
+- [x] Rebuild Home.tsx Section D: 6 differentiator cards
+- [x] Rebuild Home.tsx Section E: 5 destination cards
+- [x] Rebuild Home.tsx Section F: Choose Departure City (Surabaya vs Bali)
+- [x] Rebuild Home.tsx Section G: Featured Tours (6 tours with currency toggle)
+- [x] Rebuild Home.tsx Section H: Our Story inline (2-column + founder card + timeline)
+- [x] Rebuild Home.tsx Section I: Mandatory Requirement (Ijen Health Screening)
+- [x] Rebuild Home.tsx Section J: International Guests (geographic entity signal)
+- [x] Rebuild Home.tsx Section K: Independent Review Sources (3 platform cards)
+- [x] Rebuild Home.tsx Section L: Verify JVTO Independently (3 verification cards)
+- [x] Rebuild Home.tsx Section M: Plan Before You Book (4 travel guide teasers)
+- [x] Rebuild Home.tsx Section N: FAQ (7 flat visible Q&A + FAQPage JSON-LD)
+- [x] Verify all CTA routes are correct
+- [x] TypeScript: 0 errors
+- [x] Tests: all passing
