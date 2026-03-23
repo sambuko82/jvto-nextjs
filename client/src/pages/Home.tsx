@@ -122,11 +122,11 @@ export default function Home() {
               before you pay a deposit.
             </p>
 
-            <Link href="/verify-jvto">
-              <a className="inline-flex items-center gap-2 text-orange-600 font-bold hover:text-orange-700">
-                How to Verify JVTO <ChevronRight size={20} />
-              </a>
-            </Link>
+              <Link href="/verify-jvto">
+                <div className="inline-flex items-center gap-2 text-orange-600 font-bold hover:text-orange-700">
+                  How to Verify JVTO <ChevronRight size={20} />
+                </div>
+              </Link>
           </div>
         </section>
 
@@ -148,7 +148,7 @@ export default function Home() {
                   Our founder holds active rank in Ditpamobvit East Java. This is not a marketing credential — it is a public record. Every route decision and safety protocol is shaped by institutional police discipline, not by sales targets.
                 </p>
                 <Link href="/verify-jvto">
-                  <a className="text-orange-600 font-bold text-sm hover:text-orange-700">Verify police credentials →</a>
+                  <div className="text-orange-600 font-bold text-sm hover:text-orange-700">Verify police credentials →</div>
                 </Link>
               </div>
 
@@ -160,7 +160,7 @@ export default function Home() {
                   JVTO has never run a shared tour. Every package gives your group exclusive access to your vehicle, your driver, and your guide. "Private" is not a pricing tier here — it is the only mode we operate.
                 </p>
                 <Link href="/why-jvto">
-                  <a className="text-orange-600 font-bold text-sm hover:text-orange-700">See what private means in practice →</a>
+                  <div className="text-orange-600 font-bold text-sm hover:text-orange-700">See what private means in practice →</div>
                 </Link>
               </div>
 
@@ -172,7 +172,7 @@ export default function Home() {
                   NIB registration, TDUP license, HPWKI guide licenses, police coordination documents, press coverage, and medical staff credentials — each with a direct URL to the issuing authority or a SHA-256 hash for integrity checks.
                 </p>
                 <Link href="/verify-jvto">
-                  <a className="text-orange-600 font-bold text-sm hover:text-orange-700">Open the Proof Library →</a>
+                  <div className="text-orange-600 font-bold text-sm hover:text-orange-700">Open the Proof Library →</div>
                 </Link>
               </div>
 
@@ -184,7 +184,7 @@ export default function Home() {
                   Ijen Crater requires a pre-ascent medical check by law. JVTO includes this in every applicable package — conducted the evening before by a licensed physician (dr. Ahmad Irwandanu, SIP verified). No surprise payments at the gate.
                 </p>
                 <Link href="/travel-guide/ijen-health-screening">
-                  <a className="text-orange-600 font-bold text-sm hover:text-orange-700">Health screening details →</a>
+                  <div className="text-orange-600 font-bold text-sm hover:text-orange-700">Health screening details →</div>
                 </Link>
               </div>
 
@@ -196,7 +196,7 @@ export default function Home() {
                   Private transport, accommodation with breakfast, entrance fees, Bromo jeep, Ijen gear, and health screening are written down before you decide. No hidden "local payments." Cancel 48+ hours before Day 1: 100% JVTO Travel Credit, no expiry, transferable.
                 </p>
                 <Link href="/policy/booking-payment-cancellation">
-                  <a className="text-orange-600 font-bold text-sm hover:text-orange-700">Read the full policy →</a>
+                  <div className="text-orange-600 font-bold text-sm hover:text-orange-700">Read the full policy →</div>
                 </Link>
               </div>
 
@@ -208,7 +208,7 @@ export default function Home() {
                   JVTO grew from a local guesthouse in Bondowoso in 2010. Our guides hold HPWKI-recognized Ijen climbing licenses — not generic mountain guide certificates. We are not a Bali-based reseller or aggregator. We are 35 km from the Ijen trailhead.
                 </p>
                 <Link href="/why-jvto">
-                  <a className="text-orange-600 font-bold text-sm hover:text-orange-700">Our story and team →</a>
+                  <div className="text-orange-600 font-bold text-sm hover:text-orange-700">Our story and team →</div>
                 </Link>
               </div>
             </div>
@@ -240,16 +240,16 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {allDestinations.map((dest) => (
                 <Link key={dest.id} href={`/destinations/${dest.slug}`}>
-                  <a className="group">
-                    <div className="bg-slate-100 rounded-lg overflow-hidden mb-4 h-48 group-hover:shadow-lg transition">
-                      <img src={dest.image} alt={dest.title} className="w-full h-full object-cover group-hover:scale-105 transition" />
-                    </div>
-                    <p className="text-sm text-orange-600 font-semibold mb-2">{dest.category} · {dest.altitude}m</p>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">{dest.title}</h3>
-                    <p className="text-slate-600 text-sm mb-4">{dest.description?.substring(0, 100)}...</p>
-                    <span className="text-orange-600 font-bold text-sm group-hover:text-orange-700">{dest.title} Routes →</span>
-                  </a>
-                </Link>
+                <div className="group">
+                  <div className="bg-slate-100 rounded-lg overflow-hidden mb-4 h-48 group-hover:shadow-lg transition">
+                    <img src={dest.image} alt={dest.title} className="w-full h-full object-cover group-hover:scale-105 transition" />
+                  </div>
+                  <p className="text-sm text-orange-600 font-semibold mb-2">{dest.category} · {dest.altitude}m</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{dest.title}</h3>
+                  <p className="text-slate-600 text-sm mb-4">{dest.description?.substring(0, 100)}...</p>
+                  <span className="text-orange-600 font-bold text-sm group-hover:text-orange-700">{dest.title} Routes →</span>
+                </div>
+              </Link>
               ))}
             </div>
 
@@ -348,9 +348,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredTours.map((tour, idx) => (
                 <Link key={tour.id} href={`/tours/${tour.slug}`}>
-                  <a className="group">
+                  <div className="group">
                     <div className="bg-slate-100 rounded-lg overflow-hidden mb-4 h-48 group-hover:shadow-lg transition relative">
-                      <img src={tour.image || ''} alt={tour.name} className="w-full h-full object-cover group-hover:scale-105 transition" />
+                      {tour.image && <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-105 transition" />}
                       {idx === 2 && <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">Most Popular</div>}
                     </div>
                     <div className="flex gap-2 mb-3">
@@ -362,7 +362,7 @@ export default function Home() {
                     <p className="text-sm text-slate-600 mb-4">{tour.description?.substring(0, 80)}...</p>
                     <p className="text-orange-600 font-bold mb-2">{convertPrice(tour.pricePerPerson, selectedCurrency)}</p>
                     <span className="text-orange-600 font-bold text-sm group-hover:text-orange-700">View Tour Details →</span>
-                  </a>
+                  </div>
                 </Link>
               ))}
             </div>
