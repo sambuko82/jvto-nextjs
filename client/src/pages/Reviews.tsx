@@ -1,20 +1,21 @@
+import React from 'react';
 import { trpc } from '@/lib/trpc';
 import { GlobalLayout } from '@/components/GlobalLayout';
-import { Star, ExternalLink, ShieldCheck, MessageCircle } from 'lucide-react';
+import { Star, ExternalLink, ShieldCheck, MessageCircle, X } from 'lucide-react';
 
 const PLATFORMS = [
   {
     name: 'Trustpilot',
-    score: '4.7',
+    score: '4.8',
     label: 'Excellent',
-    total: '44+',
+    total: '47',
     color: '#00B67A',
     url: 'https://trustpilot.com/review/javavolcano-touroperator.com',
     note: 'Reviews cannot be edited or deleted by JVTO',
   },
   {
     name: 'TripAdvisor',
-    score: '4.9',
+    score: '5.0',
     label: 'Excellent',
     total: '112',
     color: '#34E0A1',
@@ -56,8 +57,27 @@ function StarRow({ rating }: { rating: number }) {
 }
 
 export default function Reviews() {
-  const { data: reviewData, isLoading } = trpc.reviews.list.useQuery({ featured: false });
+  const [ratingFilter, setRatingFilter] = React.useState<number | undefined>(undefined);
+  const [crewFilter, setCrewFilter] = React.useState<string | undefined>(undefined);
+  const [sortBy, setSortBy] = React.useState<'newest' | 'rating-high' | 'rating-low' | undefined>(undefined);
+
+  const { data: reviewData, isLoading } = trpc.reviews.filtered.useQuery({
+    rating: ratingFilter,
+    crewMentionName: crewFilter,
+    sortBy,
+  });
   const reviews = reviewData ?? [];
+
+  // Get unique crew names for filter dropdown
+  const allReviews = trpc.reviews.list.useQuery({ featured: false });
+  const uniqueCrews = React.useMemo(() => {
+    if (!allReviews.data) return [];
+    const crews = new Set<string>();
+    allReviews.data.forEach((r: any) => {
+      if (r.crewMentionName) crews.add(r.crewMentionName);
+    });
+    return Array.from(crews).sort();
+  }, [allReviews.data]);
 
   return (
     <GlobalLayout>
@@ -135,6 +155,72 @@ export default function Reviews() {
           </div>
         </section>
 
+        {/* Filter & Sort Bar */}
+        <div
+          className="max-w-6xl mx-auto px-4 md:px-8 py-4"
+          style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+        >
+          <div className="flex flex-wrap gap-3 items-center">
+            <label className="flex items-center gap-2 text-sm" style={{ color: 'var(--jvto-text-dim)' }}>
+              Rating:
+              <select
+                value={ratingFilter ?? ''}
+                onChange={(e) => setRatingFilter(e.target.value ? parseInt(e.target.value) : undefined)}
+                className="px-2 py-1 rounded text-xs"
+                style={{ background: 'var(--jvto-card)', color: 'var(--jvto-white)', border: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                <option value="">All ratings</option>
+                <option value="5">5 stars</option>
+                <option value="4">4 stars</option>
+                <option value="3">3 stars</option>
+              </select>
+            </label>
+
+            <label className="flex items-center gap-2 text-sm" style={{ color: 'var(--jvto-text-dim)' }}>
+              Guide:
+              <select
+                value={crewFilter ?? ''}
+                onChange={(e) => setCrewFilter(e.target.value || undefined)}
+                className="px-2 py-1 rounded text-xs"
+                style={{ background: 'var(--jvto-card)', color: 'var(--jvto-white)', border: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                <option value="">All guides</option>
+                {uniqueCrews.map((crew) => (
+                  <option key={crew} value={crew}>
+                    {crew}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="flex items-center gap-2 text-sm" style={{ color: 'var(--jvto-text-dim)' }}>
+              Sort:
+              <select
+                value={sortBy ?? ''}
+                onChange={(e) => setSortBy((e.target.value as any) || undefined)}
+                className="px-2 py-1 rounded text-xs"
+                style={{ background: 'var(--jvto-card)', color: 'var(--jvto-white)', border: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                <option value="">Default</option>
+                <option value="newest">Newest first</option>
+                <option value="rating-high">Highest rated</option>
+                <option value="rating-low">Lowest rated</option>
+              </select>
+            </label>
+
+            {(ratingFilter || crewFilter || sortBy) && (
+              <button
+                onClick={() => { setRatingFilter(undefined); setCrewFilter(undefined); setSortBy(undefined); }}
+                className="text-xs px-2 py-1 rounded flex items-center gap-1"
+                style={{ background: 'rgba(255,99,71,0.1)', color: '#FF6347', border: '1px solid rgba(255,99,71,0.3)' }}
+              >
+                <X className="w-3 h-3" />
+                Clear filters
+              </button>
+            )}
+          </div>
+        </div>
+
         {/* Response Policy */}
         <div
           className="max-w-6xl mx-auto px-4 md:px-8 py-5"
@@ -168,7 +254,7 @@ export default function Reviews() {
             </div>
           ) : reviews.length === 0 ? (
             <div className="text-center py-20" style={{ color: 'var(--jvto-text-dim)' }}>
-              No reviews found.
+              No reviews found matching your filters.
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -281,7 +367,7 @@ export default function Reviews() {
               }}
             >
               <ExternalLink className="w-4 h-4" />
-              View all on TripAdvisor
+              View on TripAdvisor
             </a>
           </div>
         </main>

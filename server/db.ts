@@ -1,4 +1,4 @@
-import { eq, asc, and } from "drizzle-orm";
+import { eq, and, desc, asc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users, destinations, tours, crew, crewReviews, press, partners, proofVault, faq, pagesMeta, reviews } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -149,4 +149,25 @@ export async function getReviews(featured?: boolean) {
     return db.select().from(reviews).where(eq(reviews.isFeatured, featured)).orderBy(asc(reviews.sortOrder));
   }
   return db.select().from(reviews).orderBy(asc(reviews.sortOrder));
+}
+
+export async function getReviewsFiltered(options?: { rating?: number; crewMentionName?: string; sortBy?: 'newest' | 'rating-high' | 'rating-low' }) {
+  const db = await getDb();
+  if (!db) return [];
+  const conditions = [];
+  if (options?.rating !== undefined) {
+    conditions.push(eq(reviews.rating, options.rating));
+  }
+  if (options?.crewMentionName !== undefined) {
+    conditions.push(eq(reviews.crewMentionName, options.crewMentionName));
+  }
+  let query = conditions.length > 0 ? db.select().from(reviews).where(and(...conditions)) : db.select().from(reviews);
+  if (options?.sortBy === 'newest') {
+    return query.orderBy(desc(reviews.createdAt));
+  } else if (options?.sortBy === 'rating-high') {
+    return query.orderBy(desc(reviews.rating));
+  } else if (options?.sortBy === 'rating-low') {
+    return query.orderBy(asc(reviews.rating));
+  }
+  return query.orderBy(asc(reviews.sortOrder));
 }

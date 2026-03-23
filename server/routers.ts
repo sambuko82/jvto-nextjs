@@ -8,7 +8,7 @@ import {
   getTours, getTourBySlug,
   getCrew, getCrewBySlug, getCrewReviews,
   getPress, getPartners,
-  getProofVault, getFAQ, getPageMeta, getReviews
+  getProofVault, getFAQ, getPageMeta, getReviews, getReviewsFiltered
 } from "./db";
 
 export const appRouter = router({
@@ -101,6 +101,15 @@ export const appRouter = router({
       .input(z.object({ featured: z.boolean().optional() }))
       .query(async ({ input }) => {
         return getReviews(input.featured);
+      }),
+    filtered: publicProcedure
+      .input(z.object({
+        rating: z.number().min(1).max(5).optional(),
+        crewMentionName: z.string().optional(),
+        sortBy: z.enum(['newest', 'rating-high', 'rating-low']).optional(),
+      }))
+      .query(async ({ input }) => {
+        return getReviewsFiltered(input);
       }),
   }),
 });
