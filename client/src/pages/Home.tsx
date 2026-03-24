@@ -369,7 +369,7 @@ export default function Home() {
                       <span className="text-xs bg-slate-200 text-slate-700 px-2 py-1 rounded">{tour.physicality}</span>
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 mb-2">{tour.name}</h3>
-                    <p className="text-sm text-slate-600 mb-4">{tour.description?.substring(0, 80)}...</p>
+                    <p className="text-sm text-slate-600 mb-4 line-clamp-1">{tour.description?.substring(0, 60)}</p>
                     <p className="text-orange-600 font-bold mb-2">{convertPrice(tour.pricePerPerson, selectedCurrency)}</p>
                     <span className="text-orange-600 font-bold text-sm group-hover:text-orange-700">View Tour Details →</span>
                   </div>

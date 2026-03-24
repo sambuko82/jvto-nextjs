@@ -285,3 +285,71 @@
 - [ ] All external links open in new tab with rel="noopener noreferrer"
 - [ ] All tests passing (14+)
 - [ ] TypeScript: 0 errors
+
+
+## Much Better Adventures Design Adoption (2026-03-24)
+
+### Phase 1: Content Simplification
+- [ ] Simplify Why JVTO page: 14 reasons → 7 visual cards (1 line each)
+- [ ] Reduce tour card descriptions to 1-2 lines
+- [ ] Consolidate credentials (remove duplication across pages)
+- [ ] Rewrite all micro-copy to be shorter and punchier
+
+### Phase 2: Visual Redesign
+- [ ] Redesign tour cards: image-first layout (70% image, 30% text)
+- [ ] Add difficulty level badges (7 levels with visual indicators)
+- [ ] Create visual level system with representative images
+- [ ] Implement consistent color grading and image style
+
+### Phase 3: Navigation & Organization
+- [ ] Implement tabbed navigation on tours page (SALE | POPULAR | JUST ADDED)
+- [ ] Add destination filter tabs (BROMO | IJEN | TUMPAK SEWU)
+- [ ] Organize Why JVTO by tabs (CREDENTIALS | REVIEWS | TEAM)
+- [ ] Reduce content duplication across pages
+
+### Phase 4: Image Optimization
+- [ ] Upload high-quality destination photos to CDN
+- [ ] Create consistent visual style guide
+- [ ] Optimize image loading and performance
+- [ ] Ensure all tour cards have representative images
+
+### Phase 5: Testing & Refinement
+- [ ] Test all pages for visual consistency
+- [ ] Verify SEO signals still present (JSON-LD schemas)
+- [ ] Get user feedback on new design
+- [ ] Iterate based on feedback
+
+
+## Much Better Adventures Design Adoption (2026-03-24)
+
+### Phase 1: Content Simplification (1-2 days)
+- [x] Simplify Why JVTO page: 14 reasons → 7 visual cards (1 line each)
+- [x] Reduce tour card descriptions to 1-2 lines
+- [x] Consolidate credentials: remove duplication across pages
+- [x] Rewrite all micro-copy to be shorter and punchier
+- [ ] Create visual difficulty/level badges (7 levels)
+- [x] Update internal links to consolidated pages
+
+### Phase 2: Layout Redesign (2-3 days)
+- [ ] Redesign tour cards: image-first layout (70% image, 30% text)
+- [ ] Add difficulty level badges to all tour cards
+- [ ] Implement tabbed navigation on tours page (SALE | POPULAR | JUST ADDED)
+- [ ] Add destination filter tabs (BROMO | IJEN | TUMPAK SEWU)
+- [ ] Reorganize Why JVTO by tabs (CREDENTIALS | REVIEWS | TEAM)
+- [ ] Reduce content duplication across pages
+
+### Phase 3: Visual Enhancement (3-5 days)
+- [ ] Upload high-quality destination photos to CDN
+- [ ] Create consistent visual style guide
+- [ ] Design difficulty level badges with visual indicators
+- [ ] Optimize image loading and performance
+- [ ] Implement lazy loading for images
+- [ ] Test responsive design on all breakpoints
+
+### Phase 4: Testing & Verification
+- [ ] Test all pages for visual consistency
+- [ ] Verify SEO signals (JSON-LD schemas, meta tags)
+- [ ] Test functionality (tabs, filters, forms)
+- [ ] Check performance (page load < 3s)
+- [ ] Test accessibility (keyboard, screen reader)
+- [ ] Get user feedback and iterate
