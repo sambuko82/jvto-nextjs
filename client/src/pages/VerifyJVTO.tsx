@@ -5,6 +5,26 @@ import {
   ShieldCheck, Download, Copy, Check, ExternalLink,
   FileText, Award, Newspaper, Clock, Users, Star, BookOpen,
 } from 'lucide-react';
+import { JsonLd, JVTO_ORGANIZATION_SCHEMA, FOUNDER_SCHEMA, MEDICAL_OFFICER_SCHEMA, buildBreadcrumbSchema, buildItemListSchema } from '@/components/JsonLd';
+
+// Build schemas for Verify JVTO page
+const credentialRegistrySchema = buildItemListSchema(
+  'JVTO Credential Evidence Locker',
+  'Complete registry of Java Volcano Tour Operator licenses, certifications, and press citations with SHA-256 cryptographic verification.',
+  [
+    { position: 1, name: 'NIB Business License — 1102230032918' },
+    { position: 2, name: 'TDUP Tourism Business License' },
+    { position: 3, name: 'HPWKI Membership Approval' },
+    { position: 4, name: 'Tourist Police ID — Bripka Agung Sambuko NRP 87040755' },
+    { position: 5, name: 'Ijen Climbing Permit — BBKSDA Jawa Timur' },
+    { position: 6, name: 'Medical Officer STR — dr. Ahmad Irwandanu QN00001073380217' }
+  ]
+);
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://javavolcano-touroperator.com' },
+  { name: 'Verify JVTO', url: 'https://javavolcano-touroperator.com/verify-jvto' }
+]);
 
 const SECTIONS = [
   { id: 'legal',       label: 'Legal',       icon: FileText,    color: '#A3E635' },
@@ -268,6 +288,11 @@ export default function VerifyJVTO() {
 
   return (
     <GlobalLayout>
+      <JsonLd data={JVTO_ORGANIZATION_SCHEMA} />
+      <JsonLd data={FOUNDER_SCHEMA} />
+      <JsonLd data={MEDICAL_OFFICER_SCHEMA} />
+      <JsonLd data={credentialRegistrySchema} />
+      <JsonLd data={breadcrumbSchema} />
       <div style={{ background: 'var(--jvto-navy)', minHeight: '100vh' }}>
         {/* Breadcrumb */}
         <div

@@ -158,3 +158,75 @@ export function buildBreadcrumbSchema(items: Array<{ name: string; url: string }
     }))
   };
 }
+
+
+// ─── Person Schemas ──────────────────────────────────────────────────────────
+
+export const FOUNDER_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://javavolcano-touroperator.com/#founder",
+  "name": "Agung Sambuko",
+  "alternateName": "Mr. Sam",
+  "jobTitle": "Tourist Police Officer & Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Ditpamobvit Tourist Police, Polres Bondowoso"
+  },
+  "affiliation": {
+    "@type": "Organization",
+    "@id": "https://javavolcano-touroperator.com/#organization",
+    "name": "Java Volcano Tour Operator"
+  },
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "NRP (Police Registry Number)",
+    "value": "87040755"
+  },
+  "sameAs": [
+    "https://www.detik.com",
+    "https://www.radartampubolon.com"
+  ]
+};
+
+export const MEDICAL_OFFICER_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://javavolcano-touroperator.com/#medical-officer",
+  "name": "Ahmad Irwandanu",
+  "honorificPrefix": "dr.",
+  "jobTitle": "Health Screening Physician",
+  "medicalSpecialty": "General Practice",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "STR (Medical Practice License)",
+    "value": "QN00001073380217"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "@id": "https://javavolcano-touroperator.com/#organization",
+    "name": "Java Volcano Tour Operator"
+  }
+};
+
+// ─── ItemList Schema ──────────────────────────────────────────────────────────
+
+export function buildItemListSchema(
+  name: string,
+  description: string,
+  items: Array<{ position: number; name: string; url?: string }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": name,
+    "description": description,
+    "numberOfItems": items.length,
+    "itemListElement": items.map((item) => ({
+      "@type": "ListItem",
+      "position": item.position,
+      "name": item.name,
+      ...(item.url && { "url": item.url })
+    }))
+  };
+}

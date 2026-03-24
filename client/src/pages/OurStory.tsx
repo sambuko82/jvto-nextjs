@@ -2,6 +2,7 @@ import { GlobalLayout } from '@/components/GlobalLayout';
 import { ShieldCheck, MapPin, Calendar, Award, Users, ChevronRight, CheckCircle2, Fingerprint } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
+import { JsonLd, JVTO_ORGANIZATION_SCHEMA, FOUNDER_SCHEMA, buildBreadcrumbSchema } from '@/components/JsonLd';
 
 const timeline = [
   {
@@ -69,9 +70,18 @@ const principles = [
   },
 ];
 
+// Build schemas for Our Story page
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { name: 'Home', url: 'https://javavolcano-touroperator.com' },
+  { name: 'Our Story', url: 'https://javavolcano-touroperator.com/our-story' }
+]);
+
 export default function OurStory() {
   return (
     <GlobalLayout>
+      <JsonLd data={JVTO_ORGANIZATION_SCHEMA} />
+      <JsonLd data={FOUNDER_SCHEMA} />
+      <JsonLd data={breadcrumbSchema} />
       {/* ─── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 bg-authority-navy overflow-hidden">
         <div className="absolute inset-0 grid-pattern" />

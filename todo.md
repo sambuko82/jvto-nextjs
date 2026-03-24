@@ -193,6 +193,16 @@
 - [x] Add BreadcrumbList schema
 - [x] TypeScript: 0 errors
 
+### JSON-LD Schema Implementation (2026-03-24)
+- [x] Create reusable JsonLd component and schema factories
+- [x] Add Organization schema to Home page
+- [x] Add Person schemas (Founder + Medical Officer)
+- [x] Add FAQPage schema to Why JVTO page
+- [x] Add BreadcrumbList schemas to all pages
+- [x] Add ItemList schema (credential registry) to Verify JVTO page
+- [x] Add TouristTrip schema to Tour Detail pages
+- [x] All 14 tests passing, TypeScript: 0 errors
+
 ### Verify JVTO Page (/verify-jvto)
 - [ ] Section A: Intro + Proof Library Overview
 - [ ] Section B: Legal Identity (NIB, TDUP documents)
@@ -202,11 +212,6 @@
 - [ ] Section F: Press Coverage (Stefan Loose, Detik.com, Radar Jember)
 - [ ] Section G: Partner Affiliations (ISIC, INDECON)
 - [ ] Add SHA-256 copy-to-clipboard for each document
-- [ ] Add Person schema for founder (Bripka Agung Sambuko)
-- [ ] Add Person schema for dr. Ahmad Irwandanu
-- [ ] Add ItemList schema for credential registry
-- [ ] Add BreadcrumbList schema
-- [ ] TypeScript: 0 errors
 
 ### Our Story Page (/our-story)
 - [ ] Section A: Origin Story (2015 guesthouse narrative)

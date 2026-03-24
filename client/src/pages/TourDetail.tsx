@@ -2,7 +2,7 @@ import { useParams, Link } from 'wouter';
 import { trpc } from '@/lib/trpc';
 import { GlobalLayout } from '@/components/GlobalLayout';
 import { AuditStamp } from '@/components/AuditStamp';
-import { JsonLd, buildTourSchema } from '@/components/JsonLd';
+import { JsonLd, buildTourSchema, buildBreadcrumbSchema } from '@/components/JsonLd';
 import { ShieldCheck, Clock, Users, Star, ArrowLeft, CheckCircle2, XCircle, ChevronRight, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -88,10 +88,16 @@ export default function TourDetail() {
     (typeof displayTour.itinerary === 'string' ? JSON.parse(displayTour.itinerary || '[]') : []);
 
   const tourSchema = buildTourSchema(displayTour);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: 'https://javavolcano-touroperator.com' },
+    { name: 'Tours', url: 'https://javavolcano-touroperator.com/tours' },
+    { name: displayTour?.name || 'Tour', url: `https://javavolcano-touroperator.com/tours/${slug}` }
+  ]);
 
   return (
     <GlobalLayout>
       <JsonLd data={tourSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
         {displayTour.image && (

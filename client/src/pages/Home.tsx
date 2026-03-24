@@ -4,6 +4,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { useState } from "react";
 import { Link } from "wouter";
 import { ChevronRight, Star, MapPin, Users, Shield, Lock, Fingerprint, Heart, FileText, Home as HomeIcon, Zap, Award, TrendingUp } from "lucide-react";
+import { JsonLd, JVTO_ORGANIZATION_SCHEMA, JVTO_WEBSITE_SCHEMA, FOUNDER_SCHEMA, buildBreadcrumbSchema } from "@/components/JsonLd";
 
 export default function Home() {
   const { user } = useAuth();
@@ -43,8 +44,17 @@ export default function Home() {
     return `≈ ${currency} ${(idr * rate).toFixed(0)}`;
   };
 
+  // Build breadcrumb schema
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", url: "https://javavolcano-touroperator.com" }
+  ]);
+
   return (
     <GlobalLayout>
+      <JsonLd data={JVTO_ORGANIZATION_SCHEMA} />
+      <JsonLd data={JVTO_WEBSITE_SCHEMA} />
+      <JsonLd data={FOUNDER_SCHEMA} />
+      <JsonLd data={breadcrumbSchema} />
       <div className="w-full">
         {/* SECTION B — HERO */}
         <section className="relative h-screen bg-gradient-to-b from-slate-900 to-slate-800 flex items-center justify-center overflow-hidden">

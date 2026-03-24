@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { ExternalLink, CheckCircle } from 'lucide-react';
+import { JsonLd, buildFAQSchema, buildBreadcrumbSchema, JVTO_ORGANIZATION_SCHEMA } from '@/components/JsonLd';
 
 export default function WhyJVTO() {
   const reasons = [
@@ -115,8 +116,18 @@ export default function WhyJVTO() {
     }
   ];
 
+  // Build schemas
+  const faqSchema = buildFAQSchema(faqs);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: 'https://javavolcano-touroperator.com' },
+    { name: 'Why JVTO', url: 'https://javavolcano-touroperator.com/why-jvto' }
+  ]);
+
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd data={JVTO_ORGANIZATION_SCHEMA} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Page Header */}
       <section className="py-12 px-6 bg-gradient-to-b from-slate-900 to-slate-800 text-white">
         <div className="max-w-4xl mx-auto">
