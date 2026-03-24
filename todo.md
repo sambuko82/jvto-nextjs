@@ -181,3 +181,102 @@
 - [x] Verify all CTA routes are correct
 - [x] TypeScript: 0 errors
 - [x] Tests: all passing
+
+
+## All-Hubs Blueprint Implementation (2026-03-24)
+
+### Why JVTO Page (/why-jvto)
+- [x] Section A: AEO Answer Block (55-word trust summary)
+- [x] Section B: 14 Verified Reasons (numbered list with proof links)
+- [x] Section C: FAQ (flat HTML <details> or <div> blocks)
+- [x] Add Organization schema with 14 reasons
+- [x] Add BreadcrumbList schema
+- [x] TypeScript: 0 errors
+
+### Verify JVTO Page (/verify-jvto)
+- [ ] Section A: Intro + Proof Library Overview
+- [ ] Section B: Legal Identity (NIB, TDUP documents)
+- [ ] Section C: Police Credentials (Tourist Police ID, NRP)
+- [ ] Section D: Guide Credentials (HPWKI, climbing permits)
+- [ ] Section E: Medical Officer (dr. Ahmad Irwandanu, STR)
+- [ ] Section F: Press Coverage (Stefan Loose, Detik.com, Radar Jember)
+- [ ] Section G: Partner Affiliations (ISIC, INDECON)
+- [ ] Add SHA-256 copy-to-clipboard for each document
+- [ ] Add Person schema for founder (Bripka Agung Sambuko)
+- [ ] Add Person schema for dr. Ahmad Irwandanu
+- [ ] Add ItemList schema for credential registry
+- [ ] Add BreadcrumbList schema
+- [ ] TypeScript: 0 errors
+
+### Our Story Page (/our-story)
+- [ ] Section A: Origin Story (2015 guesthouse narrative)
+- [ ] Section B: The Problem That Built JVTO
+- [ ] Section C: The Pillars We Built On (5 founding principles)
+- [ ] Section D: JVTO Today (current state, metrics)
+- [ ] Section E: Timeline (2015-2026 chronology as <ol>)
+- [ ] Section F: CTA (Meet team, Verify, Explore tours)
+- [ ] Add TravelAgency schema with foundingDate
+- [ ] Add Person schema for founder
+- [ ] Add BreadcrumbList schema
+- [ ] TypeScript: 0 errors
+
+### Travel Guide Hub (/travel-guide)
+- [ ] Section A: Intro + 4 guide card teasers
+- [ ] Section B: Quick Links to sub-pages
+- [ ] Add index of all travel guide sub-pages
+- [ ] Add BreadcrumbList schema
+- [ ] TypeScript: 0 errors
+
+### Travel Guide Sub-pages
+- [ ] /travel-guide/ijen-health-screening
+- [ ] /travel-guide/packing-list
+- [ ] /travel-guide/booking-steps
+- [ ] /travel-guide/volcano-closure-policy
+- [ ] Each with full content from blueprint
+- [ ] Each with BreadcrumbList schema
+
+### Reviews Page (/reviews)
+- [ ] Ensure all 31 Trustpilot reviews display correctly
+- [ ] Add crew mention cards with photos
+- [ ] Add filter/sort functionality
+- [ ] Add AggregateRating schema
+- [ ] TypeScript: 0 errors
+
+### Team/Crew Pages (/team, /team/:slug)
+- [ ] Verify all 14 crew members display with photos
+- [ ] Add KTA badge links
+- [ ] Add self-quotes for each crew member
+- [ ] Add trust context boxes (guide/driver)
+- [ ] Add BreadcrumbList schema
+- [ ] TypeScript: 0 errors
+
+### ISIC Student Package Page (/isic)
+- [ ] Section A: Student Discount Intro
+- [ ] Section B: How to Verify ISIC Card
+- [ ] Section C: Eligible Tours
+- [ ] Section D: Discount Amount
+- [ ] Section E: CTA (Book Now)
+- [ ] Add BreadcrumbList schema
+- [ ] TypeScript: 0 errors
+
+### Policy Pages (/policy/booking-payment-cancellation, /policy/privacy)
+- [ ] Booking & Payment Policy: full terms
+- [ ] Cancellation Policy: 48+ hours rule
+- [ ] Privacy Policy: data handling
+- [ ] Add BreadcrumbList schema
+- [ ] TypeScript: 0 errors
+
+### FAQ Page (/faq)
+- [ ] Ensure all 12 FAQ items render as flat HTML
+- [ ] Add FAQPage JSON-LD schema
+- [ ] Add BreadcrumbList schema
+- [ ] TypeScript: 0 errors
+
+### Final QA
+- [ ] All pages render without console errors
+- [ ] All pages have correct meta tags (title, description, canonical)
+- [ ] All pages have JSON-LD schemas
+- [ ] All internal links are correct
+- [ ] All external links open in new tab with rel="noopener noreferrer"
+- [ ] All tests passing (14+)
+- [ ] TypeScript: 0 errors
